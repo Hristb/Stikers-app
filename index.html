@@ -47,7 +47,33 @@
   </div>
   <script>
     const price = 8.50;
-    const stickers = Array.from({length:20}, (_,i)=>({name:`Sprite ${String(i+1).padStart(2,'0')}`, img:`https://placehold.co/600x600/${i%2?'f0f0f0':'e8e8e8'}/111111?text=Sprite+${String(i+1).padStart(2,'0')}`}));
+    const stickers = [
+      {name:'Air',         img:'https://fortnite.gg/images/sprites/air.png'},
+      {name:'Aura',        img:'https://fortnite.gg/images/sprites/aura.png'},
+      {name:'Batman',      img:'https://fortnite.gg/images/sprites/batman.png'},
+      {name:'Boss',        img:'https://fortnite.gg/images/sprites/boss.png'},
+      {name:'Burnt Peanut',img:'https://fortnite.gg/images/sprites/burnt-peanut.png'},
+      {name:'Demon',       img:'https://fortnite.gg/images/sprites/demon.png'},
+      {name:'Dream',       img:'https://fortnite.gg/images/sprites/dream.png'},
+      {name:'Duck',        img:'https://fortnite.gg/images/sprites/duck.png'},
+      {name:'Earth',       img:'https://fortnite.gg/images/sprites/earth.png'},
+      {name:'Fire',        img:'https://fortnite.gg/images/sprites/fire.png'},
+      {name:'Fishy',       img:'https://fortnite.gg/images/sprites/fishy.png'},
+      {name:'Ghost',       img:'https://fortnite.gg/images/sprites/ghost.png'},
+      {name:'Grim',        img:'https://fortnite.gg/images/sprites/grim.png'},
+      {name:'Ironmouse',   img:'https://fortnite.gg/images/sprites/ironmouse.png'},
+      {name:'John Wick',   img:'https://fortnite.gg/images/sprites/john-wick.png'},
+      {name:'King',        img:'https://fortnite.gg/images/sprites/king.png'},
+      {name:'Llama',       img:'https://fortnite.gg/images/sprites/llama.png'},
+      {name:'Peely',       img:'https://fortnite.gg/images/sprites/peely.png'},
+      {name:'Pollo',       img:'https://fortnite.gg/images/sprites/pollo.png'},
+      {name:'Punk',        img:'https://fortnite.gg/images/sprites/punk.png'},
+      {name:'Seven',       img:'https://fortnite.gg/images/sprites/seven.png'},
+      {name:'Striker',     img:'https://fortnite.gg/images/sprites/striker.png'},
+      {name:'Vini Jr.',    img:'https://fortnite.gg/images/sprites/vini-jr.png'},
+      {name:'Water',       img:'https://fortnite.gg/images/sprites/water.png'},
+      {name:'Zero Point',  img:'https://fortnite.gg/images/sprites/zero-point.png'},
+    ];
     document.getElementById('priceText').textContent = price.toFixed(2);
     const state={selected:new Set(),survey:[]}; const screens=['home','surprise','custom','final','thanks'];
     function goTo(name){screens.forEach(s=>document.getElementById('screen-'+s).classList.remove('active'));document.getElementById('screen-'+name).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
