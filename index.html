@@ -47,12 +47,12 @@
   </div>
   <script>
     const price = 8.50;
-    const stickers = Array.from({length:20}, (_,i)=>({name:`Sprite ${String(i+1).padStart(2,'0')}`, img:`https://via.placeholder.com/600x600/${i%2?'f0f0f0':'e8e8e8'}/111111?text=Sprite+${String(i+1).padStart(2,'0')}`}));
+    const stickers = Array.from({length:20}, (_,i)=>({name:`Sprite ${String(i+1).padStart(2,'0')}`, img:`https://placehold.co/600x600/${i%2?'f0f0f0':'e8e8e8'}/111111?text=Sprite+${String(i+1).padStart(2,'0')}`}));
     document.getElementById('priceText').textContent = price.toFixed(2);
     const state={selected:new Set(),survey:[]}; const screens=['home','surprise','custom','final','thanks'];
     function goTo(name){screens.forEach(s=>document.getElementById('screen-'+s).classList.remove('active'));document.getElementById('screen-'+name).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
     function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]))}
-    function imgFallback(e){e.target.onerror=null;e.target.src='https://via.placeholder.com/600x600/f5f5f5/111111?text=Sticker'}
+    function imgFallback(e){e.target.onerror=null;e.target.src='https://placehold.co/600x600/f5f5f5/111111?text=Sticker'}
     function stickerCard(sticker,selected=false){return `<div class="sticker ${selected?'selected':''}" data-name="${escapeHtml(sticker.name)}" onclick="toggleSticker('${escapeHtml(sticker.name)}')"><div class="check">✓</div><div class="imgwrap"><img src="${sticker.img}" alt="${escapeHtml(sticker.name)}" onerror="imgFallback(event)"></div><div class="name">${escapeHtml(sticker.name)}</div></div>`}
     function renderCustom(){document.getElementById('customGrid').innerHTML=stickers.map(s=>stickerCard(s,state.selected.has(s.name))).join('');document.getElementById('selectedCount').textContent=state.selected.size;document.getElementById('viewPackBtn').classList.toggle('hidden',state.selected.size!==10)}
     function toggleSticker(name){if(state.selected.has(name)) state.selected.delete(name); else if(state.selected.size<10) state.selected.add(name); renderCustom()}
