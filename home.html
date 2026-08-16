@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticker Vault | Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="home-page">
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="home.html" aria-label="Ir al inicio">
+          <div class="brand-mark">S</div>
+          <div class="brand-copy">
+            <strong>Sticker Vault</strong>
+            <span>MEMES,TECH & GAMER </span>
+          </div>
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a class="nav-link active" href="home.html">Home</a>
+          <a class="nav-link" href="index.html">Drop</a>
+        </nav>
+
+        <div class="top-actions">
+          <button class="cart-btn" aria-label="Carrito">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="19" r="1.5"></circle>
+              <circle cx="17" cy="19" r="1.5"></circle>
+              <path d="M3 4h2l2.2 9.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L19 7H6"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="catalog-hero">
+          <div>
+            <p class="eyebrow">Colección Sticker Vault</p>
+            <h1>Encuentra tu próximo sticker.</h1>
+            <p class="hero-copy">Explora stickers individuales y packs listos para llevar a tu setup.</p>
+          </div>
+          <div class="catalog-tabs" role="tablist" aria-label="Secciones del catálogo">
+            <button class="catalog-tab active" type="button" role="tab" aria-selected="true" aria-controls="catalogo" onclick="showHomeSection('catalogo', this)">Catálogo</button>
+            <button class="catalog-tab" type="button" role="tab" aria-selected="false" aria-controls="packs" onclick="showHomeSection('packs', this)">Packs</button>
+          </div>
+        </section>
+
+        <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01 / Individuales</p>
+              <h2 id="catalog-title">Catálogo</h2>
+            </div>
+            <span class="section-note">Elige tus favoritos</span>
+          </div>
+          <div class="sticker-catalog">
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp" alt="John Wick"><strong>John Wick</strong><span>Mítico</span><button aria-label="Agregar John Wick al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp" alt="Batman"><strong>Batman</strong><span>Mítico</span><button aria-label="Agregar Batman al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp" alt="Vini Jr."><strong>Vini Jr.</strong><span>Mítico</span><button aria-label="Agregar Vini Jr. al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp" alt="Burnt Peanut"><strong>Burnt Peanut</strong><span>Épico</span><button aria-label="Agregar Burnt Peanut al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp" alt="Zero Point"><strong>Zero Point</strong><span>Raro</span><button aria-label="Agregar Zero Point al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp" alt="Grim"><strong>Grim</strong><span>Épico</span><button aria-label="Agregar Grim al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp" alt="Ironmouse"><strong>Ironmouse</strong><span>Legendario</span><button aria-label="Agregar Ironmouse al carrito">+</button></article>
+            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp" alt="Pollo"><strong>Pollo</strong><span>Raro</span><button aria-label="Agregar Pollo al carrito">+</button></article>
+          </div>
+        </section>
+
+        <section id="packs" class="packs-section" aria-labelledby="packs-title" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">02 / Colecciones</p>
+              <h2 id="packs-title">Packs</h2>
+            </div>
+            <span class="section-note">Listos para descubrir</span>
+          </div>
+          <div class="pack-catalog">
+            <article class="pack-product"><img src="img/packs/pack-template.jpg" alt="Pack Sprint"><div><span class="pack-label">Pack destacado</span><h3>Sprint Collection</h3><p>Una selección intensa para empezar tu colección.</p></div><strong>S/ 8.50</strong></article>
+            <article class="pack-product"><img src="img/packs/pack-template.jpg" alt="Pack Victory"><div><span class="pack-label">Nueva llegada</span><h3>Victory Mix</h3><p>Stickers variados para darle energía a tu setup.</p></div><strong>S/ 8.50</strong></article>
+            <article class="pack-product"><img src="img/packs/pack-template.jpg" alt="Pack Night Mode"><div><span class="pack-label">Edición limitada</span><h3>Night Mode</h3><p>Una colección oscura, brillante y lista para jugar.</p></div><strong>S/ 8.50</strong></article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
