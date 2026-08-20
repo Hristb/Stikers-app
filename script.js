@@ -143,14 +143,20 @@ const SPRITES = [
 /* ── Meme stickers — carpeta img/random ── */
 /* Para agregar: copia la imagen a img/random/ y agrega una línea aquí */
 const MEME_STICKERS = [
-  { name: '1% de Paciencia', img: 'img/random/paciencia-1porcentaje.jpg' },
-  { name: 'This Is Fine',    img: 'img/random/this-is-fine.jpg' },
+  { name: '1% de Paciencia', img: 'img/random/paciencia-1porcentaje.png' },
+  { name: 'This Is Fine',    img: 'img/random/this-is-fine.png' },
+  { name: 'No entiendo',    img: 'img/random/no-entiendo.png' },
+  { name: 'Start',    img: 'img/random/start.png' },
 ];
 
 /* ── Dev stickers — carpeta img/dev ── */
 /* Para agregar: copia la imagen a img/dev/ y agrega una línea aquí */
 const DEV_STICKERS = [
-  // { name: 'Hello World',  img: 'img/dev/hello-world.jpg' },
+  { name: 'Chispa de Vida',  img: 'img/dev/chispa_de_vida.png'  },
+  { name: 'Exceso de IA',    img: 'img/dev/exceso_de_ia.png'    },
+  { name: 'GitHub',          img: 'img/dev/github.png'          },
+  { name: 'Pure Coffee',     img: 'img/dev/pure-coffee.png'     },
+  { name: 'Sin Internet',    img: 'img/dev/sin-internet.png'    },
 ];
 
 
@@ -368,7 +374,7 @@ function showHomeSection(sectionId, tab) {
     button.setAttribute('aria-selected', String(active));
   });
   if (sectionId === 'catalogo') {
-    homeVisibleCount = HOME_PAGE_SIZE;
+    homeVisibleCount = pageSize();
     renderHomeCatalog();
   }
 }
@@ -418,10 +424,49 @@ function getHomeCatalogItems() {
 
 let homeCategory = 'all';
 let homeSearchQuery = '';
-let homeVisibleCount = 10;
-const HOME_PAGE_SIZE = 10;
+let homeVisibleCount = 0; // se inicializa en renderHomeCatalog según pantalla
+const PAGE_SIZE_MOBILE  = 10;
+const PAGE_SIZE_DESKTOP = 20;
 
-function isMobile() { return window.innerWidth <= 540; }
+function pageSize() { return window.innerWidth <= 540 ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP; }
+
+// Arma la primera página mezclando grupos para que el usuario
+// vea variedad desde el primer scroll.
+// Cuotas: hasta 3 memes, hasta 3 dev, resto sprites (completa hasta 10).
+// Si algún grupo tiene menos, los slots sobrantes los llena sprites.
+const FIRST_PAGE_MIX = { meme: 3, dev: 3 };
+
+function buildMixedFirstPage(fullList, ps) {
+  const byCategory = {};
+  fullList.forEach(i => {
+    (byCategory[i.category] = byCategory[i.category] || []).push(i);
+  });
+
+  const picked = new Set();
+  const result = [];
+
+  // Toma hasta `quota` items de una categoría en orden
+  function take(category, quota) {
+    const group = byCategory[category] || [];
+    let taken = 0;
+    for (const item of group) {
+      if (taken >= quota) break;
+      if (!picked.has(item)) { result.push(item); picked.add(item); taken++; }
+    }
+  }
+
+  // Primero los grupos con cuota fija
+  Object.entries(FIRST_PAGE_MIX).forEach(([cat, quota]) => take(cat, quota));
+
+  // Rellena con sprites hasta llegar a ps
+  const spriteCategories = ['mythic', 'legendary', 'epic', 'rare', 'special'];
+  for (const cat of spriteCategories) {
+    if (result.length >= ps) break;
+    take(cat, ps - result.length);
+  }
+
+  return result.slice(0, ps);
+}
 
 function renderHomeCatalog() {
   const grid = document.getElementById('sticker-catalog');
@@ -441,9 +486,17 @@ function renderHomeCatalog() {
     return;
   }
 
-  // En mobile paginamos, en desktop mostramos todo
-  const usePaging = isMobile();
-  const visible = usePaging ? list.slice(0, homeVisibleCount) : list;
+  // Paginación en todos los dispositivos: 20 en desktop, 10 en mobile
+  const ps = pageSize();
+  if (homeVisibleCount === 0) homeVisibleCount = ps; // primera carga
+
+  let visible;
+  if (homeVisibleCount === ps && !homeSearchQuery && homeCategory === 'all') {
+    // Primera página: mezcla representativa (3 memes, 3 dev, resto sprites)
+    visible = buildMixedFirstPage(list, ps);
+  } else {
+    visible = list.slice(0, homeVisibleCount);
+  }
 
   grid.innerHTML = visible.map(i => `
     <article class="sticker-product" data-name="${i.name}" data-rarity="${i.rarity}" data-img="${i.img}">
@@ -453,17 +506,17 @@ function renderHomeCatalog() {
       <button aria-label="Agregar ${i.name} al carrito" onclick="addToCartFromEl(this)">+</button>
     </article>`).join('');
 
-  if (btn) btn.hidden = !usePaging || homeVisibleCount >= list.length;
+  if (btn) btn.hidden = homeVisibleCount >= list.length;
 }
 
 function loadMoreHome() {
-  homeVisibleCount += HOME_PAGE_SIZE;
+  homeVisibleCount += pageSize();
   renderHomeCatalog();
 }
 
 function searchHomeCatalog(val) {
   homeSearchQuery = val.toLowerCase().trim();
-  homeVisibleCount = HOME_PAGE_SIZE; // reset paging on new search
+  homeVisibleCount = pageSize(); // reset paging on new search
   renderHomeCatalog();
 }
 
@@ -558,7 +611,7 @@ let _resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(_resizeTimer);
   _resizeTimer = setTimeout(() => {
-    homeVisibleCount = HOME_PAGE_SIZE;
+    homeVisibleCount = pageSize();
     renderHomeCatalog();
   }, 200);
 });
