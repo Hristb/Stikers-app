@@ -23,7 +23,7 @@
         </nav>
 
         <div class="top-actions">
-          <button class="cart-btn" aria-label="Cart">
+          <button class="cart-btn" aria-label="Cart" onclick="openCart()">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="9" cy="19" r="1.5"></circle>
               <circle cx="17" cy="19" r="1.5"></circle>
@@ -135,7 +135,7 @@
           <div class="cust-header-main">
             <div class="cust-title-block">
               <span class="pill pill-blue">Custom Pack</span>
-              <h2>Elige tus Stickers</h2>
+              <h2>Personaliza tus Stickers y tu Hoja</h2>
             </div>
             <div class="cust-rhs">
               <div class="cust-counter" aria-live="polite">
@@ -158,6 +158,11 @@
             <button class="filter-tab" onclick="filterBy('memes',this)">Memes</button>
             <button class="filter-tab" onclick="filterBy('gaming',this)">Gaming</button>
           </div>
+
+          <div class="finish-row" role="group" aria-label="Elige el material de tu hoja">
+            <span class="finish-row-label">Hoja por defecto</span>
+            <div id="finish-tabs" class="finish-tabs"></div>
+          </div>
         </div>
 
         <div class="cust-body">
@@ -165,7 +170,7 @@
         </div>
 
         <div class="cust-footer">
-          <div id="pack-preview" class="pack-preview" aria-label="Stickers seleccionados"></div>
+          <div id="pack-preview" class="pack-preview" aria-label="Stickers seleccionados. Toca uno para cambiar su hoja"></div>
           <button class="primary-btn" id="cust-btn" onclick="confirmCustom()" disabled>
             Confirmar
           </button>
@@ -176,6 +181,30 @@
     <!-- Toast -->
     <div id="toast" class="toast" aria-live="polite"></div>
 
+    <!-- ── Cart Overlay ── -->
+    <div id="cart-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Carrito">
+      <div class="overlay-panel cart-panel">
+        <button class="ov-close" onclick="closeOv('cart-overlay')" aria-label="Cerrar">✕</button>
+        <div class="cart-hdr">
+          <h2>Tu Carrito</h2>
+          <p>Revisa tus stickers antes de pedir por WhatsApp</p>
+        </div>
+        <div class="cart-body">
+          <p id="cart-empty" class="cart-empty">Tu carrito está vacío. Agrega stickers desde el catálogo.</p>
+          <div id="cart-items"></div>
+        </div>
+        <p id="cart-hint" class="cart-hint" hidden></p>
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Total</span>
+            <strong id="cart-total">S/ 0.00</strong>
+          </div>
+          <button id="cart-checkout-btn" class="primary-btn" onclick="checkoutCart()" disabled>Pedir por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

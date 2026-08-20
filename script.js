@@ -127,10 +127,39 @@ const SPRITES = [
   { name:'Holofoil Peely',   img:'T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp',   rarity:'special' },
 ];
 
-SPRITES.forEach((sprite, index) => {
-  const tagCycle = ['dev', 'gaming', 'memes'];
-  sprite.tag = tagCycle[index % tagCycle.length];
-});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CATEGORÍAS DE STICKERS — configuración centralizada
+//
+// Para agregar una nueva categoría:
+//   1. Crea el array (ej: GAMING_STICKERS) con objetos { name, img }
+//   2. Agrégalo en getHomeCatalogItems() igual que DEV_STICKERS o MEME_STICKERS
+//   3. Añade la clave en CATEGORY_LABELS si quieres una etiqueta en español
+//
+// searchTags define qué palabras activan ese grupo en el buscador.
+// Puedes poner tantas como quieras: ['dev', 'code', 'programacion']
+// ─────────────────────────────────────────────────────────────────────────────
+
+/* ── Meme stickers — carpeta img/random ── */
+/* Para agregar: copia la imagen a img/random/ y agrega una línea aquí */
+const MEME_STICKERS = [
+  { name: '1% de Paciencia', img: 'img/random/paciencia-1porcentaje.jpg' },
+  { name: 'This Is Fine',    img: 'img/random/this-is-fine.jpg' },
+];
+
+/* ── Dev stickers — carpeta img/dev ── */
+/* Para agregar: copia la imagen a img/dev/ y agrega una línea aquí */
+const DEV_STICKERS = [
+  // { name: 'Hello World',  img: 'img/dev/hello-world.jpg' },
+];
+
+
+/* ── Vinyl finish options for the Customize Pack modal ── */
+const FINISHES = [
+  { id: 'blanco',      label: 'Vinil Blanco',           img: 'img/vinil/Vinil_adhesivo_blanco.jpg' },
+  { id: 'arcoiris',    label: 'Holográfico Arcoíris',    img: 'img/vinil/Vinil_adhesivo_holográfico_arcoiris.jpg' },
+  { id: 'vidrio-roto', label: 'Holográfico Vidrio Roto', img: 'img/vinil/Vinil_adhesivo_holográfico_vidrio_roto.jpg' },
+];
 
 /* ── state ── */
 let selectedIdxs = [];
@@ -139,6 +168,8 @@ let revealIdx    = 0;
 let revealing    = false;
 let activeFilter = 'all';
 let searchQuery  = '';
+let selectedFinish = FINISHES[0].id;
+let itemFinishes   = {}; // { [spriteIdx]: finishId } — lets each sticker use its own vinyl
 
 /* ── Mystery Pack ── */
 function openMystery() {
@@ -244,12 +275,29 @@ function orderMystery() {
 
 /* ── Customize Pack ── */
 function openCustomize() {
-  selectedIdxs = []; activeFilter = 'all'; searchQuery = '';
+  selectedIdxs = []; activeFilter = 'all'; searchQuery = ''; selectedFinish = FINISHES[0].id; itemFinishes = {};
   const searchEl = document.getElementById('cust-search');
   if (searchEl) searchEl.value = '';
-  renderGrid(); updateCTA();
+  renderGrid(); updateCTA(); renderFinishes();
   document.querySelectorAll('.filter-tab').forEach((t, i) => t.classList.toggle('active', i === 0));
   openOv('customize-overlay');
+}
+
+function renderFinishes() {
+  const box = document.getElementById('finish-tabs');
+  if (!box) return;
+  box.innerHTML = FINISHES.map(f => {
+    const sel = f.id === selectedFinish;
+    return `<button type="button" class="finish-opt${sel ? ' selected' : ''}" onclick="selectFinish('${f.id}')" title="${f.label}" aria-pressed="${sel}">
+      <span class="finish-swatch" style="background-image:url('${f.img}')"></span>
+      <span class="finish-name">${f.label}</span>
+    </button>`;
+  }).join('');
+}
+
+function selectFinish(id) {
+  selectedFinish = id;
+  renderFinishes();
 }
 
 function renderGrid() {
@@ -283,9 +331,17 @@ function renderGrid() {
 
 function toggleSpr(gi) {
   const pos = selectedIdxs.indexOf(gi);
-  if (pos > -1) selectedIdxs.splice(pos, 1);
-  else if (selectedIdxs.length < 10) selectedIdxs.push(gi);
+  if (pos > -1) { selectedIdxs.splice(pos, 1); delete itemFinishes[gi]; }
+  else if (selectedIdxs.length < 10) { selectedIdxs.push(gi); itemFinishes[gi] = selectedFinish; }
   renderGrid(); updateCTA();
+}
+
+/* cycles a single selected sticker through the available vinyl finishes */
+function cycleItemFinish(gi) {
+  const order = FINISHES.map(f => f.id);
+  const current = itemFinishes[gi] || selectedFinish;
+  itemFinishes[gi] = order[(order.indexOf(current) + 1) % order.length];
+  updateCTA();
 }
 
 function filterBy(rarity, btn) {
@@ -311,7 +367,107 @@ function showHomeSection(sectionId, tab) {
     button.classList.toggle('active', active);
     button.setAttribute('aria-selected', String(active));
   });
+  if (sectionId === 'catalogo') {
+    homeVisibleCount = HOME_PAGE_SIZE;
+    renderHomeCatalog();
+  }
 }
+
+/* ── Home catalog: full sprite list + memes + dev ── */
+const CATEGORY_LABELS = {
+  mythic:    'Mítico',
+  legendary: 'Legendario',
+  epic:      'Épico',
+  rare:      'Raro',
+  special:   'Special',
+  meme:      'Meme',
+  dev:       'Dev',
+};
+
+// Tags de búsqueda por categoría — agrega aquí sinónimos/palabras clave
+const CATEGORY_SEARCH_TAGS = {
+  fortnite: ['fornite', 'sprites', 'battle royale', 'espiritus'],
+  meme:     ['meme', 'memes', 'random'],
+  dev:      ['dev', 'code', 'programacion', 'developer', 'coding'],
+};
+
+function getHomeCatalogItems() {
+  const spriteItems = SPRITES.map(s => ({
+    name: s.name,
+    img: `${IMG}${s.img}`,
+    rarity: RARITY_ES[s.rarity],
+    category: s.rarity,
+    searchTags: CATEGORY_SEARCH_TAGS.fortnite,  // todos los sprites son de Fortnite
+  }));
+  const memeItems = MEME_STICKERS.map(m => ({
+    name: m.name,
+    img: m.img,
+    rarity: CATEGORY_LABELS.meme,
+    category: 'meme',
+    searchTags: CATEGORY_SEARCH_TAGS.meme,
+  }));
+  const devItems = DEV_STICKERS.map(d => ({
+    name: d.name,
+    img: d.img,
+    rarity: CATEGORY_LABELS.dev,
+    category: 'dev',
+    searchTags: CATEGORY_SEARCH_TAGS.dev,
+  }));
+  return [...spriteItems, ...memeItems, ...devItems];
+}
+
+let homeCategory = 'all';
+let homeSearchQuery = '';
+let homeVisibleCount = 10;
+const HOME_PAGE_SIZE = 10;
+
+function isMobile() { return window.innerWidth <= 540; }
+
+function renderHomeCatalog() {
+  const grid = document.getElementById('sticker-catalog');
+  const btn  = document.getElementById('load-more-btn');
+  if (!grid) return;
+
+  let list = getHomeCatalogItems();
+  if (homeCategory !== 'all') list = list.filter(i => i.category === homeCategory);
+  if (homeSearchQuery) list = list.filter(i =>
+    i.name.toLowerCase().includes(homeSearchQuery) ||
+    i.searchTags.some(tag => tag.includes(homeSearchQuery))
+  );
+
+  if (list.length === 0) {
+    grid.innerHTML = '<p class="no-results">No se encontraron stickers para esa búsqueda.</p>';
+    if (btn) btn.hidden = true;
+    return;
+  }
+
+  // En mobile paginamos, en desktop mostramos todo
+  const usePaging = isMobile();
+  const visible = usePaging ? list.slice(0, homeVisibleCount) : list;
+
+  grid.innerHTML = visible.map(i => `
+    <article class="sticker-product" data-name="${i.name}" data-rarity="${i.rarity}" data-img="${i.img}">
+      <img src="${i.img}" alt="${i.name}" loading="lazy" onerror="this.onerror=null;this.style.opacity='.25'">
+      <strong>${i.name}</strong>
+      <span>${i.rarity}</span>
+      <button aria-label="Agregar ${i.name} al carrito" onclick="addToCartFromEl(this)">+</button>
+    </article>`).join('');
+
+  if (btn) btn.hidden = !usePaging || homeVisibleCount >= list.length;
+}
+
+function loadMoreHome() {
+  homeVisibleCount += HOME_PAGE_SIZE;
+  renderHomeCatalog();
+}
+
+function searchHomeCatalog(val) {
+  homeSearchQuery = val.toLowerCase().trim();
+  homeVisibleCount = HOME_PAGE_SIZE; // reset paging on new search
+  renderHomeCatalog();
+}
+
+renderHomeCatalog();
 
 function updateCTA() {
   const n = selectedIdxs.length;
@@ -325,12 +481,17 @@ function updateCTA() {
   numEl.classList.toggle('done', n === 10);
   if (counter) counter.style.setProperty('--progress', `${progress}%`);
 
-  /* live preview strip */
+  /* live preview strip — each thumbnail shows/cycles its own vinyl finish */
   const preview = document.getElementById('pack-preview');
-  preview.innerHTML = selectedIdxs.map(i =>
-    `<img src="${IMG}${SPRITES[i].img}" alt="${SPRITES[i].name}" title="${SPRITES[i].name}"
-          onerror="this.onerror=null;this.style.opacity='.25'">`
-  ).join('');
+  preview.innerHTML = selectedIdxs.map(i => {
+    const finish = FINISHES.find(f => f.id === (itemFinishes[i] || selectedFinish)) || FINISHES[0];
+    return `<button type="button" class="pack-preview-item" onclick="cycleItemFinish(${i})"
+            title="${SPRITES[i].name} — ${finish.label} (toca para cambiar la hoja)">
+      <img src="${IMG}${SPRITES[i].img}" alt="${SPRITES[i].name}"
+           onerror="this.onerror=null;this.style.opacity='.25'">
+      <span class="pack-preview-finish" style="background-image:url('${finish.img}')"></span>
+    </button>`;
+  }).join('');
   preview.classList.toggle('visible', n > 0);
 
   if (n === 10) {
@@ -344,7 +505,10 @@ function updateCTA() {
 
 function confirmCustom() {
   if (selectedIdxs.length !== 10) return;
-  const lines = selectedIdxs.map(i => `  - ${SPRITES[i].name} (${RARITY_ES[SPRITES[i].rarity]})`).join('\n');
+  const lines = selectedIdxs.map(i => {
+    const finish = FINISHES.find(f => f.id === (itemFinishes[i] || selectedFinish)) || FINISHES[0];
+    return `  - ${SPRITES[i].name} (${RARITY_ES[SPRITES[i].rarity]}) — Hoja: ${finish.label}`;
+  }).join('\n');
   const text = `Hola! Quiero pedir el Pack Personalizado - S/ 8.50\n\nMis stickers:\n${lines}`;
   showToast('Abriendo WhatsApp…');
   setTimeout(() => {
@@ -387,4 +551,14 @@ document.addEventListener('keydown', e => {
       if (document.getElementById(id).classList.contains('open')) closeOv(id);
     });
   }
+});
+
+/* Re-render catalog on resize so paging kicks in/out correctly */
+let _resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(() => {
+    homeVisibleCount = HOME_PAGE_SIZE;
+    renderHomeCatalog();
+  }, 200);
 });

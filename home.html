@@ -23,7 +23,7 @@
         </nav>
 
         <div class="top-actions">
-          <button class="cart-btn" aria-label="Carrito">
+          <button class="cart-btn" aria-label="Carrito" onclick="openCart()">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="9" cy="19" r="1.5"></circle>
               <circle cx="17" cy="19" r="1.5"></circle>
@@ -55,16 +55,16 @@
             </div>
             <span class="section-note">Elige tus favoritos</span>
           </div>
-          <div class="sticker-catalog">
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp" alt="John Wick"><strong>John Wick</strong><span>Mítico</span><button aria-label="Agregar John Wick al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp" alt="Batman"><strong>Batman</strong><span>Mítico</span><button aria-label="Agregar Batman al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp" alt="Vini Jr."><strong>Vini Jr.</strong><span>Mítico</span><button aria-label="Agregar Vini Jr. al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp" alt="Burnt Peanut"><strong>Burnt Peanut</strong><span>Épico</span><button aria-label="Agregar Burnt Peanut al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp" alt="Zero Point"><strong>Zero Point</strong><span>Raro</span><button aria-label="Agregar Zero Point al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp" alt="Grim"><strong>Grim</strong><span>Épico</span><button aria-label="Agregar Grim al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp" alt="Ironmouse"><strong>Ironmouse</strong><span>Legendario</span><button aria-label="Agregar Ironmouse al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp" alt="Pollo"><strong>Pollo</strong><span>Raro</span><button aria-label="Agregar Pollo al carrito">+</button></article>
-            <article class="sticker-product"><img src="https://drive.google.com/uc?export=view&id=17E-1UytKBab5NB_5T6-oxnwKrDU02vjL" alt="Meme"><strong>Meme</strong><span>Meme</span><button aria-label="Agregar Meme al carrito">+</button></article>
+
+          <div class="home-search">
+            <input id="home-search" class="home-search-input" type="search"
+                   placeholder="memes, fortnite, dev, epic…" autocomplete="off"
+                   oninput="searchHomeCatalog(this.value)">
+          </div>
+
+          <div class="sticker-catalog" id="sticker-catalog"></div>
+          <div class="load-more-row">
+            <button id="load-more-btn" class="load-more-btn" onclick="loadMoreHome()" hidden>Ver 10 más</button>
           </div>
         </section>
 
@@ -84,6 +84,34 @@
         </section>
       </main>
     </div>
+
+    <!-- ── Cart Overlay ── -->
+    <div id="cart-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Carrito">
+      <div class="overlay-panel cart-panel">
+        <button class="ov-close" onclick="closeOv('cart-overlay')" aria-label="Cerrar">✕</button>
+        <div class="cart-hdr">
+          <h2>Tu Carrito</h2>
+          <p>Revisa tus stickers antes de pedir por WhatsApp</p>
+        </div>
+        <div class="cart-body">
+          <p id="cart-empty" class="cart-empty">Tu carrito está vacío. Agrega stickers desde el catálogo.</p>
+          <div id="cart-items"></div>
+        </div>
+        <p id="cart-hint" class="cart-hint" hidden></p>
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Total</span>
+            <strong id="cart-total">S/ 0.00</strong>
+          </div>
+          <button id="cart-checkout-btn" class="primary-btn" onclick="checkoutCart()" disabled>Pedir por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" aria-live="polite"></div>
+
     <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
