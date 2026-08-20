@@ -393,8 +393,8 @@ const CATEGORY_LABELS = {
 // Tags de búsqueda por categoría — agrega aquí sinónimos/palabras clave
 const CATEGORY_SEARCH_TAGS = {
   fortnite: ['fornite', 'sprites', 'battle royale', 'espiritus'],
-  meme:     ['meme', 'memes', 'random'],
-  dev:      ['dev', 'code', 'programacion', 'developer', 'coding'],
+  meme:     ['meme', 'memes', 'random','Memes'],
+  dev:      ['dev', 'Dev','code', 'programacion', 'developer', 'coding','Tech','tech','codigo'],
 };
 
 function getHomeCatalogItems() {
