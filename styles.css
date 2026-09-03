@@ -81,6 +81,16 @@ body {
   text-transform: uppercase;
 }
 
+.brand-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 540px) {
+  .brand-logo { height: 32px; }
+}
+
 .top-actions {
   display: flex;
   align-items: center;
@@ -1338,4 +1348,81 @@ body:not(.home-page) .cta-row { margin-top: 14px; }
   body:not(.home-page) .offer-card { padding: 14px 12px 12px; border-radius: 14px; }
   body:not(.home-page) .offer-card h2 { font-size: 1.55rem; }
   body:not(.home-page) .mystery-stage { height: 250px; }
+}
+
+/* ── Site footer (lo inyecta ui.js) ── */
+.site-footer {
+  margin-top: 28px;
+  border-top: 1px solid rgba(224, 224, 230, 0.08);
+  background: #1B1B21;
+  color: #A0A0B0;
+}
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 34px 26px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.site-footer-brand {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 380px;
+}
+.site-footer-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: var(--lime);
+  color: #12140F;
+  font-weight: 800;
+}
+.site-footer-brand strong {
+  display: block;
+  color: #E0E0E6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+}
+.site-footer-brand p {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.site-footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.site-footer-nav a {
+  color: #A0A0B0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.site-footer-nav a:hover { color: var(--lime); }
+.site-footer-legal {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 26px 28px;
+  font-size: 0.72rem;
+  color: #6B6B78;
+}
+@media (max-width: 640px) {
+  .site-footer-inner {
+    flex-direction: column;
+    padding: 26px 18px 14px;
+    gap: 20px;
+  }
+  .site-footer-brand { max-width: none; }
+  .site-footer-nav { flex-flow: row wrap; gap: 8px 18px; }
+  .site-footer-legal { padding: 0 18px 22px; }
 }

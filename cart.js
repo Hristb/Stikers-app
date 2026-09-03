@@ -8,7 +8,7 @@
    completing a pack as they keep adding stickers.
 
    Cart state persists in localStorage so it survives navigation between
-   home.html and index.html.
+   index.html (home/catálogo) and drop.html.
 
    Checkout is routed through a "payment channel" abstraction. Today only
    WhatsApp is wired up (business requirement: centralize on WhatsApp), but

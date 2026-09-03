@@ -1,0 +1,29 @@
+{
+  "name": "Sticker Vault",
+  "short_name": "Sticker Vault",
+  "description": "Stickers de memes, tech y gaming. Vinil resistente al agua, impresión HD.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1E1E24",
+  "theme_color": "#1E1E24",
+  "icons": [
+    {
+      "src": "img/icons/sticker-vault-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/sticker-vault-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "img/icons/sticker-vault-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

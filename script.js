@@ -307,7 +307,7 @@ function selectFinish(id) {
 }
 
 function renderGrid() {
-  let list = activeFilter === 'all' ? SPRITES : SPRITES.filter(s => s.tag === activeFilter);
+  let list = activeFilter === 'all' ? SPRITES : SPRITES.filter(s => s.rarity === activeFilter);
   if (searchQuery) list = list.filter(s => s.name.toLowerCase().includes(searchQuery));
 
   if (list.length === 0) {
@@ -360,6 +360,7 @@ function filterBy(rarity, btn) {
 function searchSprites(val) {
   searchQuery = val.toLowerCase().trim();
   renderGrid();
+  if (typeof trackSearch === 'function') trackSearch('pack-personalizado', val);
 }
 
 function showHomeSection(sectionId, tab) {
@@ -518,6 +519,7 @@ function searchHomeCatalog(val) {
   homeSearchQuery = val.toLowerCase().trim();
   homeVisibleCount = pageSize(); // reset paging on new search
   renderHomeCatalog();
+  if (typeof trackSearch === 'function') trackSearch('catalogo', val);
 }
 
 renderHomeCatalog();
@@ -597,11 +599,12 @@ function showToast(msg) {
 document.querySelectorAll('.overlay').forEach(el => {
   el.addEventListener('click', e => { if (e.target === el) closeOv(el.id); });
 });
-/* Close on Escape */
+/* Close on Escape — algunos overlays no existen en todas las páginas */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
-    ['mystery-overlay','customize-overlay'].forEach(id => {
-      if (document.getElementById(id).classList.contains('open')) closeOv(id);
+    ['mystery-overlay','customize-overlay','cart-overlay'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.classList.contains('open')) closeOv(id);
     });
   }
 });
