@@ -1,0 +1,3849 @@
+[
+  {
+    "id": "fortnite-john-wick",
+    "name": "John Wick",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_Reload_FillerGrunt_icon_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-batman",
+    "name": "Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-vini-jr",
+    "name": "Vini Jr.",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CokeParmesan_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-burnt-peanut",
+    "name": "Burnt Peanut",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_BurntPeanut_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-zero-point",
+    "name": "Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-grim",
+    "name": "Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-ironmouse",
+    "name": "Ironmouse",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_PedicureAntacid_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-pollo",
+    "name": "Pollo",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_CompanyStargazer_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "mythic",
+    "rarityLabel": "Mítico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-dream",
+    "name": "Dream",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-punk",
+    "name": "Punk",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-boss",
+    "name": "Boss",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-seven",
+    "name": "Seven",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-llama",
+    "name": "Llama",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-peely",
+    "name": "Peely",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "legendary",
+    "rarityLabel": "Legendario",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-duck",
+    "name": "Duck",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-ghost",
+    "name": "Ghost",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Unvault_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-demon",
+    "name": "Demon",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-king",
+    "name": "King",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-striker",
+    "name": "Striker",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-aura",
+    "name": "Aura",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "epic",
+    "rarityLabel": "Épico",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-water",
+    "name": "Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Unvault_Ch7S3_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "rare",
+    "rarityLabel": "Raro",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-earth",
+    "name": "Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Ch7S3_UI_L.webp",
+    "category": "fortnite",
+    "rarity": "rare",
+    "rarityLabel": "Raro",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-fire",
+    "name": "Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Unvault_Ch7S3_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "rare",
+    "rarityLabel": "Raro",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-fishy",
+    "name": "Fishy",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "rare",
+    "rarityLabel": "Raro",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-air",
+    "name": "Air",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Default_L.webp",
+    "category": "fortnite",
+    "rarity": "rare",
+    "rarityLabel": "Raro",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-batman",
+    "name": "Cube Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Cube_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-batman",
+    "name": "Gold Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-batman",
+    "name": "Gummy Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-batman",
+    "name": "Galaxy Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-batman",
+    "name": "Holofoil Batman",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_FossilMeal_Holofoil_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-water",
+    "name": "Gold Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-quack-water",
+    "name": "Quack Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Quack_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-water",
+    "name": "Gummy Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-water",
+    "name": "Galaxy Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-water",
+    "name": "Gem Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Gem_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-water",
+    "name": "Holofoil Water",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Water_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-earth",
+    "name": "Cube Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-earth",
+    "name": "Gold Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-quack-earth",
+    "name": "Quack Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Quack_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-earth",
+    "name": "Gummy Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-earth",
+    "name": "Galaxy Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-earth",
+    "name": "Gem Earth",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Earth_Gem_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-fire",
+    "name": "Cube Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-fire",
+    "name": "Gold Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-quack-fire",
+    "name": "Quack Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Quack_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-fire",
+    "name": "Gummy Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-fire",
+    "name": "Galaxy Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-fire",
+    "name": "Holofoil Fire",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fire_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-duck",
+    "name": "Gold Duck",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-duck",
+    "name": "Gummy Duck",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-duck",
+    "name": "Galaxy Duck",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-duck",
+    "name": "Gem Duck",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Duck_Gem_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-ghost",
+    "name": "Gold Ghost",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-ghost",
+    "name": "Gummy Ghost",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-ghost",
+    "name": "Galaxy Ghost",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-ghost",
+    "name": "Holofoil Ghost",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Ghost_Holo_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-dream",
+    "name": "Cube Dream",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-dream",
+    "name": "Gold Dream",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-dream",
+    "name": "Gummy Dream",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-dream",
+    "name": "Galaxy Dream",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Sleepy_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-demon",
+    "name": "Gold Demon",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-demon",
+    "name": "Gummy Demon",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-demon",
+    "name": "Galaxy Demon",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-demon",
+    "name": "Gem Demon",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_RedDemon_Gem_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-punk",
+    "name": "Cube Punk",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-punk",
+    "name": "Gold Punk",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-punk",
+    "name": "Gummy Punk",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-punk",
+    "name": "Galaxy Punk",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Punk_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-king",
+    "name": "Gold King",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-king",
+    "name": "Gummy King",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-king",
+    "name": "Galaxy King",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-king",
+    "name": "Holofoil King",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_King_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-zero-point",
+    "name": "Cube Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-zero-point",
+    "name": "Gold Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-quack-zero-point",
+    "name": "Quack Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Quack_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-zero-point",
+    "name": "Gummy Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-zero-point",
+    "name": "Galaxy Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-zero-point",
+    "name": "Gem Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Gem_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-zero-point",
+    "name": "Holofoil Zero Point",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_ZeroPoint_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-fishy",
+    "name": "Cube Fishy",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Cube_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-fishy",
+    "name": "Gold Fishy",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-fishy",
+    "name": "Gummy Fishy",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-fishy",
+    "name": "Galaxy Fishy",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Fishy_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-striker",
+    "name": "Gold Striker",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-striker",
+    "name": "Gummy Striker",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-striker",
+    "name": "Galaxy Striker",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-striker",
+    "name": "Holofoil Striker",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Soccer_Holofoil_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-aura",
+    "name": "Gold Aura",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-aura",
+    "name": "Gummy Aura",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-aura",
+    "name": "Galaxy Aura",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-aura",
+    "name": "Gem Aura",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Drifter_Gem_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-boss",
+    "name": "Cube Boss",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Cube_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-boss",
+    "name": "Gold Boss",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-boss",
+    "name": "Gummy Boss",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-boss",
+    "name": "Galaxy Boss",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Boss_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-cube-grim",
+    "name": "Cube Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Cube_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-grim",
+    "name": "Gold Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-grim",
+    "name": "Gummy Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-grim",
+    "name": "Galaxy Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-grim",
+    "name": "Gem Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Gem_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-grim",
+    "name": "Holofoil Grim",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_GrimReaper_Holofoil_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-air",
+    "name": "Gold Air",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Gold_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-air",
+    "name": "Gummy Air",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Candy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-air",
+    "name": "Galaxy Air",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Galaxy_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-air",
+    "name": "Holofoil Air",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Air_Holo_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-seven",
+    "name": "Gold Seven",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-seven",
+    "name": "Gummy Seven",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-seven",
+    "name": "Galaxy Seven",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-seven",
+    "name": "Holofoil Seven",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Seven_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-llama",
+    "name": "Gold Llama",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-llama",
+    "name": "Gummy Llama",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-llama",
+    "name": "Galaxy Llama",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gem-llama",
+    "name": "Gem Llama",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Llama_Gem_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gold-peely",
+    "name": "Gold Peely",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Gold_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-gummy-peely",
+    "name": "Gummy Peely",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Candy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-galaxy-peely",
+    "name": "Galaxy Peely",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Galaxy_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "fortnite-holofoil-peely",
+    "name": "Holofoil Peely",
+    "image": "https://fortnite.gg/img/x/sprites/icons/T_Icon_BR_Creature_Sprite_Peely_Holofoil_ui_L.webp",
+    "category": "fortnite",
+    "rarity": "special",
+    "rarityLabel": "Special",
+    "price": 1,
+    "searchTags": [
+      "fornite",
+      "sprites",
+      "battle royale",
+      "espiritus"
+    ]
+  },
+  {
+    "id": "meme-1-de-paciencia",
+    "name": "1% de Paciencia",
+    "image": "/img/random/paciencia-1porcentaje.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random"
+    ]
+  },
+  {
+    "id": "meme-this-is-fine",
+    "name": "This Is Fine",
+    "image": "/img/random/this-is-fine.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random"
+    ]
+  },
+  {
+    "id": "meme-no-entiendo",
+    "name": "No entiendo",
+    "image": "/img/random/no-entiendo.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random"
+    ]
+  },
+  {
+    "id": "meme-start",
+    "name": "Start",
+    "image": "/img/random/start.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random"
+    ]
+  },
+  {
+    "id": "dev-chispa-de-vida",
+    "name": "Chispa de Vida",
+    "image": "/img/dev/chispa_de_vida.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo"
+    ]
+  },
+  {
+    "id": "dev-exceso-de-ia",
+    "name": "Exceso de IA",
+    "image": "/img/dev/exceso_de_ia.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo"
+    ]
+  },
+  {
+    "id": "dev-github",
+    "name": "GitHub",
+    "image": "/img/dev/github.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo"
+    ]
+  },
+  {
+    "id": "dev-pure-coffee",
+    "name": "Pure Coffee",
+    "image": "/img/dev/pure-coffee.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo"
+    ]
+  },
+  {
+    "id": "dev-sin-internet",
+    "name": "Sin Internet",
+    "image": "/img/dev/sin-internet.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo"
+    ]
+  },
+  {
+    "id": "gato-boxeador",
+    "name": "Gato Boxeador",
+    "image": "/img/gatos/gato-boxeador.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "box",
+      "pelea"
+    ]
+  },
+  {
+    "id": "gato-blanco-triste",
+    "name": "Gato Blanco Triste",
+    "image": "/img/gatos/gato-blanco-triste.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "triste",
+      "blanco"
+    ]
+  },
+  {
+    "id": "gatita-lazo-rosa",
+    "name": "Gatita Lazo Rosa",
+    "image": "/img/gatos/gatita-lazo-rosa.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "kitty",
+      "rosa",
+      "lazo"
+    ]
+  },
+  {
+    "id": "gatito-crema",
+    "name": "Gatito Crema",
+    "image": "/img/gatos/gatito-crema.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "gatito",
+      "tierno"
+    ]
+  },
+  {
+    "id": "gato-estirado",
+    "name": "Gato Estirado",
+    "image": "/img/gatos/gato-estirado.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "cansado",
+      "dormir"
+    ]
+  },
+  {
+    "id": "gato-lengua-afuera",
+    "name": "Gato Lengua Afuera",
+    "image": "/img/gatos/gato-lengua-afuera.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "lengua",
+      "blep"
+    ]
+  },
+  {
+    "id": "gato-tengo-una-idea",
+    "name": "Tengo una Idea",
+    "image": "/img/gatos/gato-tengo-una-idea.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "idea"
+    ]
+  },
+  {
+    "id": "gato-negro-nota",
+    "name": "Gato Negro con Nota",
+    "image": "/img/gatos/gato-negro-nota.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "negro",
+      "nota"
+    ]
+  },
+  {
+    "id": "gato-shhh",
+    "name": "Gato Shhh",
+    "image": "/img/gatos/gato-shhh.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "silencio",
+      "secreto"
+    ]
+  },
+  {
+    "id": "gato-estudiando",
+    "name": "Gato Estudiando",
+    "image": "/img/gatos/gato-estudiando.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "estudio",
+      "examen"
+    ]
+  },
+  {
+    "id": "gato-negro-espia",
+    "name": "Gato Negro Espia",
+    "image": "/img/gatos/gato-negro-espia.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "negro",
+      "espia",
+      "asomando"
+    ]
+  },
+  {
+    "id": "gato-atigrado-espia",
+    "name": "Gato Atigrado Espia",
+    "image": "/img/gatos/gato-atigrado-espia.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "atigrado",
+      "espia"
+    ]
+  },
+  {
+    "id": "gato-mira-la-hora",
+    "name": "Gato Mira la Hora",
+    "image": "/img/gatos/gato-mira-la-hora.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "reloj",
+      "hora",
+      "tarde"
+    ]
+  },
+  {
+    "id": "gato-rockero",
+    "name": "Gato Rockero",
+    "image": "/img/gatos/gato-rockero.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "rock",
+      "metal"
+    ]
+  },
+  {
+    "id": "gato-grunon",
+    "name": "Gato Gruñon",
+    "image": "/img/gatos/gato-grunon.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "enojado",
+      "grunon"
+    ]
+  },
+  {
+    "id": "gato-llorando",
+    "name": "Gato Llorando",
+    "image": "/img/gatos/gato-llorando.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "llorando",
+      "crying cat"
+    ]
+  },
+  {
+    "id": "gato-billetera",
+    "name": "Gato Billetera",
+    "image": "/img/gatos/gato-billetera.png",
+    "category": "gatos",
+    "rarity": null,
+    "rarityLabel": "Gato",
+    "price": 1,
+    "searchTags": [
+      "gato",
+      "gatos",
+      "cat",
+      "meme",
+      "michi",
+      "dinero",
+      "plata",
+      "billetera"
+    ]
+  },
+  {
+    "id": "frase-chill",
+    "name": "Chill",
+    "image": "/img/frases/chill.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "chill",
+      "calma",
+      "tranqui"
+    ]
+  },
+  {
+    "id": "frase-si-a-todo",
+    "name": "Si a Todo",
+    "image": "/img/frases/si-a-todo.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "si",
+      "todo",
+      "yes"
+    ]
+  },
+  {
+    "id": "frase-si-se-puede",
+    "name": "Si Se Puede",
+    "image": "/img/frases/si-se-puede.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "animo"
+    ]
+  },
+  {
+    "id": "frase-focus",
+    "name": "Focus",
+    "image": "/img/frases/focus.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "concentracion",
+      "enfoque"
+    ]
+  },
+  {
+    "id": "frase-focus-glitch",
+    "name": "Focus Glitch",
+    "image": "/img/frases/focus-glitch.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "concentracion",
+      "glitch"
+    ]
+  },
+  {
+    "id": "frase-blah-blah-blah",
+    "name": "Blah Blah Blah",
+    "image": "/img/frases/blah-blah-blah.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "blah",
+      "hablar"
+    ]
+  },
+  {
+    "id": "frase-modo-drama",
+    "name": "Modo Drama",
+    "image": "/img/frases/modo-drama.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "drama",
+      "on"
+    ]
+  },
+  {
+    "id": "frase-cero-interes",
+    "name": "0% Interes",
+    "image": "/img/frases/cero-interes.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "interes",
+      "aburrido"
+    ]
+  },
+  {
+    "id": "frase-sin-estres",
+    "name": "Sin Estres",
+    "image": "/img/frases/sin-estres.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "estres",
+      "calma"
+    ]
+  },
+  {
+    "id": "frase-solo-se-que-no-se-nada",
+    "name": "Solo Se Que No Se Nada",
+    "image": "/img/frases/solo-se-que-no-se-nada.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "socrates",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "frase-exceso-de-marketing",
+    "name": "Exceso de Marketing",
+    "image": "/img/frases/exceso-de-marketing.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "marketing",
+      "publicidad"
+    ]
+  },
+  {
+    "id": "frase-alto-contenido-de-fe",
+    "name": "Alto Contenido de Fe",
+    "image": "/img/frases/alto-contenido-de-fe.png",
+    "category": "frases",
+    "rarity": null,
+    "rarityLabel": "Frase",
+    "price": 1,
+    "searchTags": [
+      "frase",
+      "frases",
+      "texto",
+      "motivacion",
+      "fe",
+      "esperanza"
+    ]
+  },
+  {
+    "id": "dev-docker",
+    "name": "Docker",
+    "image": "/img/dev/docker.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "docker",
+      "contenedor",
+      "devops"
+    ]
+  },
+  {
+    "id": "dev-typescript",
+    "name": "TypeScript",
+    "image": "/img/dev/typescript.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "typescript",
+      "ts",
+      "javascript"
+    ]
+  },
+  {
+    "id": "dev-postman",
+    "name": "Postman",
+    "image": "/img/dev/postman.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "postman",
+      "api",
+      "rest"
+    ]
+  },
+  {
+    "id": "dev-inteligencia-artificial",
+    "name": "Inteligencia Artificial",
+    "image": "/img/dev/inteligencia-artificial.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "ia",
+      "ai",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "dev-panic-tabla-periodica",
+    "name": "PaNIC",
+    "image": "/img/dev/panic-tabla-periodica.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "panic",
+      "quimica",
+      "bug"
+    ]
+  },
+  {
+    "id": "dev-sello-success",
+    "name": "Success",
+    "image": "/img/dev/sello-success.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "success",
+      "exito",
+      "deploy"
+    ]
+  },
+  {
+    "id": "dev-need-coffee",
+    "name": "Need Coffee",
+    "image": "/img/dev/need-coffee.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "cafe",
+      "coffee",
+      "energia"
+    ]
+  },
+  {
+    "id": "dev-espresso-patronum",
+    "name": "Espresso Patronum",
+    "image": "/img/dev/espresso-patronum.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "cafe",
+      "espresso",
+      "harry potter"
+    ]
+  },
+  {
+    "id": "dev-tecla-esc",
+    "name": "Tecla ESC",
+    "image": "/img/dev/tecla-esc.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "esc",
+      "teclado",
+      "escape"
+    ]
+  },
+  {
+    "id": "dev-laptop-too-cute",
+    "name": "Too Cute to Compute",
+    "image": "/img/dev/laptop-too-cute.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "laptop",
+      "compu"
+    ]
+  },
+  {
+    "id": "dev-carpeta-pixel",
+    "name": "Carpeta Pixel",
+    "image": "/img/dev/carpeta-pixel.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "carpeta",
+      "pixel",
+      "archivos"
+    ]
+  },
+  {
+    "id": "dev-papelera-pixel",
+    "name": "Papelera Pixel",
+    "image": "/img/dev/papelera-pixel.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "papelera",
+      "pixel",
+      "basura"
+    ]
+  },
+  {
+    "id": "dev-nube-binaria",
+    "name": "Nube Binaria",
+    "image": "/img/dev/nube-binaria.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "nube",
+      "cloud",
+      "binario"
+    ]
+  },
+  {
+    "id": "dev-loading-retro",
+    "name": "Loading Retro",
+    "image": "/img/dev/loading-retro.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "loading",
+      "retro",
+      "cargando"
+    ]
+  },
+  {
+    "id": "dev-pinguinos-loading",
+    "name": "Pinguinos Loading",
+    "image": "/img/dev/pinguinos-loading.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "pinguino",
+      "linux",
+      "loading"
+    ]
+  },
+  {
+    "id": "meme-bateria-100",
+    "name": "Bateria 100%",
+    "image": "/img/random/bateria-100.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "bateria",
+      "energia",
+      "full"
+    ]
+  },
+  {
+    "id": "meme-bateria-60",
+    "name": "Bateria 60%",
+    "image": "/img/random/bateria-60.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "bateria",
+      "energia"
+    ]
+  },
+  {
+    "id": "meme-bateria-40",
+    "name": "Bateria 40%",
+    "image": "/img/random/bateria-40.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "bateria",
+      "energia"
+    ]
+  },
+  {
+    "id": "meme-bateria-20",
+    "name": "Bateria 20%",
+    "image": "/img/random/bateria-20.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "bateria",
+      "baja",
+      "energia"
+    ]
+  },
+  {
+    "id": "meme-carita-feliz",
+    "name": "Carita Feliz",
+    "image": "/img/random/carita-feliz.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "feliz",
+      "smiley",
+      "sonrisa"
+    ]
+  },
+  {
+    "id": "meme-seis-siete",
+    "name": "6-7",
+    "image": "/img/random/seis-siete.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "67",
+      "seis siete",
+      "tendencia"
+    ]
+  },
+  {
+    "id": "meme-tea-rex",
+    "name": "Tea-Rex",
+    "image": "/img/random/tea-rex.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "dino",
+      "te",
+      "tea",
+      "dinosaurio"
+    ]
+  },
+  {
+    "id": "meme-flork-musica",
+    "name": "Flork Musica",
+    "image": "/img/random/flork-musica.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "flork",
+      "musica",
+      "audifonos"
+    ]
+  },
+  {
+    "id": "meme-flork-acostado",
+    "name": "Flork Acostado",
+    "image": "/img/random/flork-acostado.png",
+    "category": "meme",
+    "rarity": null,
+    "rarityLabel": "Meme",
+    "price": 1,
+    "searchTags": [
+      "meme",
+      "memes",
+      "random",
+      "flork",
+      "cansado",
+      "descanso"
+    ]
+  },
+  {
+    "id": "dev-angular",
+    "name": "Angular",
+    "image": "/img/dev/angular.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "angular",
+      "frontend",
+      "framework"
+    ]
+  },
+  {
+    "id": "dev-aws",
+    "name": "AWS",
+    "image": "/img/dev/aws.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "aws",
+      "amazon",
+      "cloud",
+      "nube"
+    ]
+  },
+  {
+    "id": "dev-aws-lambda",
+    "name": "AWS Lambda",
+    "image": "/img/dev/aws-lambda.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "aws",
+      "lambda",
+      "serverless",
+      "cloud"
+    ]
+  },
+  {
+    "id": "dev-aws-lambda-icono",
+    "name": "AWS Lambda (icono)",
+    "image": "/img/dev/aws-lambda-icono.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "aws",
+      "lambda",
+      "serverless"
+    ]
+  },
+  {
+    "id": "dev-azure",
+    "name": "Azure",
+    "image": "/img/dev/azure.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "azure",
+      "microsoft",
+      "cloud",
+      "nube"
+    ]
+  },
+  {
+    "id": "dev-azure-texto",
+    "name": "Microsoft Azure",
+    "image": "/img/dev/azure-texto.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "azure",
+      "microsoft",
+      "cloud"
+    ]
+  },
+  {
+    "id": "dev-chatgpt",
+    "name": "ChatGPT",
+    "image": "/img/dev/chatgpt.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "chatgpt",
+      "openai",
+      "ia",
+      "ai"
+    ]
+  },
+  {
+    "id": "dev-openai",
+    "name": "OpenAI",
+    "image": "/img/dev/openai.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "openai",
+      "ia",
+      "ai",
+      "gpt"
+    ]
+  },
+  {
+    "id": "dev-copilot",
+    "name": "Copilot",
+    "image": "/img/dev/copilot.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "copilot",
+      "microsoft",
+      "ia",
+      "ai"
+    ]
+  },
+  {
+    "id": "dev-discord",
+    "name": "Discord",
+    "image": "/img/dev/discord.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "discord",
+      "chat",
+      "comunidad"
+    ]
+  },
+  {
+    "id": "dev-discord-texto",
+    "name": "Discord (texto)",
+    "image": "/img/dev/discord-texto.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "discord",
+      "chat"
+    ]
+  },
+  {
+    "id": "dev-duolingo",
+    "name": "Duolingo",
+    "image": "/img/dev/duolingo.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "duolingo",
+      "idiomas",
+      "buho"
+    ]
+  },
+  {
+    "id": "dev-git",
+    "name": "Git",
+    "image": "/img/dev/git.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "git",
+      "control de versiones",
+      "vcs"
+    ]
+  },
+  {
+    "id": "dev-git-bash",
+    "name": "Git Bash",
+    "image": "/img/dev/git-bash.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "git",
+      "bash",
+      "terminal",
+      "consola"
+    ]
+  },
+  {
+    "id": "dev-github-texto",
+    "name": "GitHub (texto)",
+    "image": "/img/dev/github-texto.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "github",
+      "git",
+      "repo"
+    ]
+  },
+  {
+    "id": "dev-github-completo",
+    "name": "GitHub",
+    "image": "/img/dev/github-completo.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "github",
+      "git",
+      "repo",
+      "octocat"
+    ]
+  },
+  {
+    "id": "dev-github-icono",
+    "name": "GitHub (icono)",
+    "image": "/img/dev/github-icono.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "github",
+      "git",
+      "octocat"
+    ]
+  },
+  {
+    "id": "dev-gitlab-texto",
+    "name": "GitLab (texto)",
+    "image": "/img/dev/gitlab-texto.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "gitlab",
+      "git",
+      "repo"
+    ]
+  },
+  {
+    "id": "dev-gitlab",
+    "name": "GitLab",
+    "image": "/img/dev/gitlab.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "gitlab",
+      "git",
+      "repo",
+      "zorro"
+    ]
+  },
+  {
+    "id": "dev-gitlab-wordmark",
+    "name": "GitLab (wordmark)",
+    "image": "/img/dev/gitlab-wordmark.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "gitlab",
+      "git"
+    ]
+  },
+  {
+    "id": "dev-java",
+    "name": "Java",
+    "image": "/img/dev/java.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "java",
+      "jvm",
+      "backend",
+      "cafe"
+    ]
+  },
+  {
+    "id": "dev-java-naranja",
+    "name": "Java (naranja)",
+    "image": "/img/dev/java-naranja.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "java",
+      "jvm",
+      "backend"
+    ]
+  },
+  {
+    "id": "dev-java-duke",
+    "name": "Java Duke",
+    "image": "/img/dev/java-duke.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "java",
+      "duke",
+      "mascota"
+    ]
+  },
+  {
+    "id": "dev-excel",
+    "name": "Excel",
+    "image": "/img/dev/excel.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "excel",
+      "microsoft",
+      "office",
+      "hojas"
+    ]
+  },
+  {
+    "id": "dev-office",
+    "name": "Office",
+    "image": "/img/dev/office.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "office",
+      "microsoft",
+      "ofimatica"
+    ]
+  },
+  {
+    "id": "dev-powerpoint",
+    "name": "PowerPoint",
+    "image": "/img/dev/powerpoint.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "powerpoint",
+      "microsoft",
+      "office",
+      "ppt"
+    ]
+  },
+  {
+    "id": "dev-teams",
+    "name": "Teams",
+    "image": "/img/dev/teams.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "teams",
+      "microsoft",
+      "chat",
+      "reunion"
+    ]
+  },
+  {
+    "id": "dev-word",
+    "name": "Word",
+    "image": "/img/dev/word.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "word",
+      "microsoft",
+      "office",
+      "documento"
+    ]
+  },
+  {
+    "id": "dev-minecraft",
+    "name": "Minecraft",
+    "image": "/img/dev/minecraft.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "minecraft",
+      "juego",
+      "pixel",
+      "bloques"
+    ]
+  },
+  {
+    "id": "dev-nasa",
+    "name": "NASA",
+    "image": "/img/dev/nasa.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "nasa",
+      "espacio",
+      "ciencia",
+      "cohete"
+    ]
+  },
+  {
+    "id": "dev-nasa-negro",
+    "name": "NASA (negro)",
+    "image": "/img/dev/nasa-negro.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "nasa",
+      "espacio",
+      "ciencia"
+    ]
+  },
+  {
+    "id": "dev-nextjs",
+    "name": "Next.js",
+    "image": "/img/dev/nextjs.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "nextjs",
+      "react",
+      "frontend",
+      "framework"
+    ]
+  },
+  {
+    "id": "dev-nextjs-cubo",
+    "name": "Next (cubo)",
+    "image": "/img/dev/nextjs-cubo.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "next",
+      "nextjs",
+      "retro"
+    ]
+  },
+  {
+    "id": "dev-npm",
+    "name": "npm",
+    "image": "/img/dev/npm.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "npm",
+      "node",
+      "paquetes",
+      "javascript"
+    ]
+  },
+  {
+    "id": "dev-npm-cubo",
+    "name": "npm (cubo)",
+    "image": "/img/dev/npm-cubo.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "npm",
+      "node",
+      "paquetes"
+    ]
+  },
+  {
+    "id": "dev-npm-cuadrado",
+    "name": "npm (cuadrado)",
+    "image": "/img/dev/npm-cuadrado.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "npm",
+      "node",
+      "paquetes"
+    ]
+  },
+  {
+    "id": "dev-nvidia",
+    "name": "NVIDIA",
+    "image": "/img/dev/nvidia.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "nvidia",
+      "gpu",
+      "gráfica",
+      "hardware"
+    ]
+  },
+  {
+    "id": "dev-python",
+    "name": "Python",
+    "image": "/img/dev/python.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "python",
+      "backend",
+      "script",
+      "serpiente"
+    ]
+  },
+  {
+    "id": "dev-python-texto",
+    "name": "Python (texto)",
+    "image": "/img/dev/python-texto.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "python",
+      "backend",
+      "script"
+    ]
+  },
+  {
+    "id": "dev-python-icono",
+    "name": "Python (icono)",
+    "image": "/img/dev/python-icono.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "python",
+      "backend",
+      "script"
+    ]
+  },
+  {
+    "id": "dev-pypi",
+    "name": "PyPI",
+    "image": "/img/dev/pypi.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "pypi",
+      "python",
+      "paquetes",
+      "pip"
+    ]
+  },
+  {
+    "id": "dev-slack",
+    "name": "Slack",
+    "image": "/img/dev/slack.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "slack",
+      "chat",
+      "trabajo",
+      "equipo"
+    ]
+  },
+  {
+    "id": "dev-slack-icono",
+    "name": "Slack (icono)",
+    "image": "/img/dev/slack-icono.png",
+    "category": "dev",
+    "rarity": null,
+    "rarityLabel": "Dev",
+    "price": 1,
+    "searchTags": [
+      "dev",
+      "code",
+      "programacion",
+      "developer",
+      "coding",
+      "tech",
+      "codigo",
+      "logo",
+      "slack",
+      "chat",
+      "equipo"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "blanco",
+    "label": "Vinil Blanco",
+    "image": "/img/vinil/Vinil_adhesivo_blanco.jpg"
+  },
+  {
+    "id": "arcoiris",
+    "label": "Holográfico Arcoíris",
+    "image": "/img/vinil/Vinil_adhesivo_holográfico_arcoiris.jpg"
+  },
+  {
+    "id": "vidrio-roto",
+    "label": "Holográfico Vidrio Roto",
+    "image": "/img/vinil/Vinil_adhesivo_holográfico_vidrio_roto.jpg"
+  }
+]

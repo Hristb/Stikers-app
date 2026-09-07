@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pack-fortnite",
+    "label": "Gaming",
+    "name": "Pack Fortnite",
+    "description": "10 sprites de Fortnite en vinil resistente al agua. Mítico, legendario, épico y más.",
+    "image": "/img/packs/pack-fortnite.webp",
+    "price": 8.5
+  },
+  {
+    "id": "pack-developer",
+    "label": "Tech",
+    "name": "Pack Developer",
+    "description": "10 stickers de lenguajes, herramientas y logos dev para tu laptop.",
+    "image": "/img/packs/pack-developers.webp",
+    "price": 8.5
+  },
+  {
+    "id": "pack-gatos",
+    "label": "Memes",
+    "name": "Pack Gatos",
+    "description": "10 gatos meme para tu setup. Selección de la casa.",
+    "image": "/img/packs/pack-gatos.webp",
+    "price": 8.5
+  }
+]

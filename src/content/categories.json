@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fortnite",
+    "name": "Fortnite",
+    "sortOrder": 1
+  },
+  {
+    "id": "meme",
+    "name": "Memes",
+    "sortOrder": 2
+  },
+  {
+    "id": "dev",
+    "name": "Dev / Tech",
+    "sortOrder": 3
+  },
+  {
+    "id": "gatos",
+    "name": "Gatos",
+    "sortOrder": 4
+  },
+  {
+    "id": "frases",
+    "name": "Frases",
+    "sortOrder": 5
+  }
+]

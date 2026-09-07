@@ -1,0 +1,16 @@
+<div id="mystery-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Pack Sorpresa">
+  <div class="overlay-panel mystery-panel">
+    <button class="ov-close" onclick="closeOv('mystery-overlay')" aria-label="Cerrar">✕</button>
+    <div class="mystery-hdr">
+      <span class="pill pill-purple">Mystery Pack</span>
+      <h2>Pack Sorpresa</h2>
+      <p id="mystery-sub">Presiona revelar para descubrir tus 10 stickers</p>
+    </div>
+    <div id="mystery-cards" class="mystery-cards"></div>
+    <div id="mystery-summary" class="mystery-summary" hidden></div>
+    <div class="mystery-cta">
+      <button id="mystery-btn" class="primary-btn pulse-glow" onclick="startReveal()">Revelar Pack ✨</button>
+      <button id="mystery-new-btn" class="secondary-btn" onclick="openMystery()" hidden>Probar Otro Pack</button>
+    </div>
+  </div>
+</div>

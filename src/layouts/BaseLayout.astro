@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CartOverlay from '../components/CartOverlay.astro';
+import CheckoutOverlay from '../components/CheckoutOverlay.astro';
+import StickerOverlay from '../components/StickerOverlay.astro';
+import Toast from '../components/Toast.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  path: string; // ej. '/' o '/drop'
+  active: 'index' | 'drop';
+  bodyClass?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogTitle = title,
+  ogDescription = description,
+  path,
+  active,
+  bodyClass = '',
+  noindex = false,
+} = Astro.props;
+
+const SITE_URL = 'https://stikersvault.com';
+const canonical = `${SITE_URL}${path}`;
+
+const pricing = await getCollection('pricing');
+const pricingData = pricing[0]?.data ?? { unitPrice: 1, packSize: 10, packPrice: 8.5 };
+---
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1E1E24" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sticker Vault" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${SITE_URL}/img/icons/sticker-vault-icon-512.png`} />
+    <meta name="twitter:card" content="summary" />
+    <script defer data-domain="stikersvault.com" src="https://plausible.io/js/script.js"></script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/sticker-vault-icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/img/icons/sticker-vault-icon-512.png" />
+    <link rel="apple-touch-icon" href="/img/icons/sticker-vault-icon-192.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class={bodyClass}>
+    <div class="page">
+      <Header active={active} />
+      <main>
+        <slot />
+      </main>
+    </div>
+
+    <Footer />
+    <CartOverlay />
+    <CheckoutOverlay />
+    <StickerOverlay />
+    <Toast />
+
+    <script type="application/json" id="pricing-json" set:html={JSON.stringify(pricingData)} />
+
+    <!-- Orden importa: los scripts de página (slot "scripts") dependen de
+         que shared.js/checkout.js/cart.js ya se hayan ejecutado. -->
+    <script src="../scripts/analytics.js"></script>
+    <script src="../scripts/shared.js"></script>
+    <script src="../scripts/checkout.js"></script>
+    <script src="../scripts/cart.js"></script>
+    <slot name="scripts" />
+  </body>
+</html>

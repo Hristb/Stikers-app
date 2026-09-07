@@ -1,0 +1,29 @@
+---
+// Paso final del checkout, común al carrito, el Pack Sorpresa y el Pack
+// Personalizado: pedimos nombre + WhatsApp para dejar registro de quién
+// llega a comprar antes de abrir la conversación. Lo maneja checkout.js.
+---
+<div id="checkout-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Datos para tu pedido">
+  <div class="overlay-panel cart-panel checkout-panel">
+    <button class="ov-close" onclick="closeOv('checkout-overlay')" aria-label="Cerrar">✕</button>
+    <div class="cart-hdr">
+      <h2>Casi listo</h2>
+      <p>Déjanos tus datos y coordinamos el pago por WhatsApp</p>
+    </div>
+    <form id="checkout-form" class="checkout-form" novalidate>
+      <label class="checkout-field">
+        <span>Nombre</span>
+        <input type="text" name="full_name" autocomplete="name" required
+               minlength="2" maxlength="120" placeholder="Tu nombre" />
+      </label>
+      <label class="checkout-field">
+        <span>WhatsApp</span>
+        <input type="tel" name="phone" inputmode="tel" autocomplete="tel" required
+               placeholder="Ej. 999 888 777" />
+      </label>
+      <p id="checkout-error" class="checkout-error" role="alert" hidden></p>
+      <button type="submit" class="primary-btn" id="checkout-submit">Confirmar y abrir WhatsApp</button>
+      <p class="checkout-note">Solo lo usamos para enviarte el pedido. Nada de spam.</p>
+    </form>
+  </div>
+</div>

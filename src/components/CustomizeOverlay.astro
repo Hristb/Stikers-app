@@ -1,0 +1,50 @@
+<div id="customize-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Pack Personalizado">
+  <div class="overlay-panel cust-panel">
+    <div class="cust-hdr">
+      <div class="cust-header-main">
+        <div class="cust-title-block">
+          <span class="pill pill-blue">Custom Pack</span>
+          <h2>Personaliza tus Stickers y tu Hoja</h2>
+        </div>
+        <div class="cust-rhs">
+          <div class="cust-counter" aria-live="polite">
+            <span class="cust-num" id="cust-num">0</span>
+            <span class="cust-den">/10</span>
+          </div>
+          <button class="ov-close" onclick="closeOv('customize-overlay')" aria-label="Cerrar">✕</button>
+        </div>
+      </div>
+
+      <div class="cust-search">
+        <input id="cust-search" class="cust-search-input" type="search"
+               placeholder="Buscar sticker…" autocomplete="off"
+               oninput="searchSprites(this.value)">
+      </div>
+
+      <div class="filter-tabs" role="group" aria-label="Filtrar por rareza">
+        <button class="filter-tab active" onclick="filterBy('all',this)">Todos</button>
+        <button class="filter-tab" onclick="filterBy('mythic',this)">Míticos</button>
+        <button class="filter-tab" onclick="filterBy('legendary',this)">Legendarios</button>
+        <button class="filter-tab" onclick="filterBy('epic',this)">Épicos</button>
+        <button class="filter-tab" onclick="filterBy('rare',this)">Raros</button>
+        <button class="filter-tab" onclick="filterBy('special',this)">Special</button>
+      </div>
+
+      <div class="finish-row" role="group" aria-label="Elige el material de tu hoja">
+        <span class="finish-row-label">Hoja por defecto</span>
+        <div id="finish-tabs" class="finish-tabs"></div>
+      </div>
+    </div>
+
+    <div class="cust-body">
+      <div id="sprites-grid" class="sprites-grid"></div>
+    </div>
+
+    <div class="cust-footer">
+      <div id="pack-preview" class="pack-preview" aria-label="Stickers seleccionados. Toca uno para cambiar su hoja"></div>
+      <button class="primary-btn" id="cust-btn" onclick="confirmCustom()" disabled>
+        Confirmar
+      </button>
+    </div>
+  </div>
+</div>
