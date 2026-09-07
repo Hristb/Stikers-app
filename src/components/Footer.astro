@@ -1,0 +1,31 @@
+---
+// Antes vivía como un template literal inyectado en runtime por ui.js
+// (parche por no tener componentes reales). Ahora es un componente Astro
+// normal, renderizado en build time — sin JS de por medio.
+const year = new Date().getFullYear();
+
+// Edita acá los enlaces del footer (deja '' para ocultar uno).
+const LINKS = {
+  whatsapp: 'https://wa.me/51956547311',
+  instagram: '', // ej: 'https://instagram.com/tuusuario'
+  tiktok: '',
+};
+---
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <span class="site-footer-logo">S</span>
+      <div>
+        <strong>Sticker Vault</strong>
+        <p>Stickers de memes, tech y gaming.<br>Vinil resistente al agua · impresión HD.</p>
+      </div>
+    </div>
+    <nav class="site-footer-nav" aria-label="Pie de página">
+      <a href="/">Catálogo</a>
+      {LINKS.whatsapp && <a href={LINKS.whatsapp} target="_blank" rel="noopener">Pedir por WhatsApp</a>}
+      {LINKS.instagram && <a href={LINKS.instagram} target="_blank" rel="noopener">Instagram</a>}
+      {LINKS.tiktok && <a href={LINKS.tiktok} target="_blank" rel="noopener">TikTok</a>}
+    </nav>
+  </div>
+  <p class="site-footer-legal">© {year} Sticker Vault · Pedidos por WhatsApp · Perú</p>
+</footer>

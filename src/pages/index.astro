@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const products = await getCollection('products');
+const catalog = products.map(p => ({ id: p.id, ...p.data }));
+
+const packs = await getCollection('packs');
+---
+<BaseLayout
+  title="Sticker Vault | Catálogo"
+  description="Sticker Vault — stickers de memes, tech y gaming. Vinil resistente al agua, impresión HD. Pide por WhatsApp."
+  ogTitle="Sticker Vault | Stickers de memes, tech y gaming"
+  ogDescription="Vinil resistente al agua, impresión HD. Arma tu pack de 10 y pide por WhatsApp."
+  path="/"
+  active="index"
+  bodyClass="home-page"
+>
+  <section class="catalog-hero">
+    <div>
+      <p class="eyebrow">Colección Sticker Vault</p>
+      <h1>Encuentra tu próximo sticker.</h1>
+      <p class="hero-copy">Explora stickers individuales y packs listos para llevar a tu setup.</p>
+    </div>
+    <div class="catalog-tabs" role="tablist" aria-label="Secciones del catálogo">
+      <button class="catalog-tab active" type="button" role="tab" aria-selected="true" aria-controls="catalogo" onclick="showHomeSection('catalogo', this)">Catálogo</button>
+      <button class="catalog-tab" type="button" role="tab" aria-selected="false" aria-controls="packs" onclick="showHomeSection('packs', this)">Packs</button>
+    </div>
+  </section>
+
+  <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">01 / Individuales</p>
+        <h2 id="catalog-title">Catálogo</h2>
+      </div>
+      <span class="section-note">Elige tus favoritos</span>
+    </div>
+
+    <div class="home-search">
+      <input id="home-search" class="home-search-input" type="search"
+             placeholder="Busca: gato, python, batería, chill…" autocomplete="off"
+             oninput="searchHomeCatalog(this.value)">
+    </div>
+
+    <div class="sticker-catalog" id="sticker-catalog"></div>
+    <div class="load-more-row">
+      <button id="load-more-btn" class="load-more-btn" onclick="loadMoreHome()" hidden>Ver 10 más</button>
+    </div>
+  </section>
+
+  <section id="packs" class="packs-section" aria-labelledby="packs-title" hidden>
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">02 / Colecciones</p>
+        <h2 id="packs-title">Packs</h2>
+      </div>
+      <span class="section-note">Listos para descubrir</span>
+    </div>
+    <div class="pack-catalog">
+      {packs.map(pack => (
+        <article
+          class="pack-product"
+          data-kind="pack"
+          data-id={pack.id}
+          data-name={pack.data.name}
+          data-img={pack.data.image}
+          role="button"
+          tabindex="0"
+          aria-label={`Ver ${pack.data.name}`}
+        >
+          <img src={pack.data.image} alt={`Pack ${pack.data.name}`} />
+          <div>
+            <span class="pack-label">{pack.data.label}</span>
+            <h3>{pack.data.name}</h3>
+            <p>{pack.data.description}</p>
+          </div>
+          <strong>S/ {pack.data.price.toFixed(2)}</strong>
+          <button
+            type="button"
+            class="pack-add"
+            aria-label={`Agregar ${pack.data.name} al carrito`}
+            onclick="addToCartFromEl(this)"
+          >+</button>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Fragment slot="scripts">
+    <script type="application/json" id="catalog-json" set:html={JSON.stringify(catalog)} />
+    <script type="application/json" id="packs-json" set:html={JSON.stringify(packs.map(p => ({ id: p.id, ...p.data })))} />
+    <script src="../scripts/catalog.js"></script>
+  </Fragment>
+</BaseLayout>

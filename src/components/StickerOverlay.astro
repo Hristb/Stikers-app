@@ -1,0 +1,27 @@
+---
+// Vista rápida: se abre al tocar una card del catálogo o un pack del home.
+// Lo llena y controla catalog.js (openSticker / openPack). Reutiliza el
+// sistema de overlays del sitio (.overlay / .overlay-panel).
+---
+<div id="sticker-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Detalle">
+  <div class="overlay-panel sticker-panel">
+    <button class="ov-close" onclick="closeOv('sticker-overlay')" aria-label="Cerrar">✕</button>
+    <div class="sticker-view">
+      <div class="sticker-view-media">
+        <img id="sv-img" src="" alt="" onerror="this.onerror=null;this.style.opacity='.25'" />
+      </div>
+      <div class="sticker-view-info">
+        <span id="sv-badge" class="sticker-view-badge" hidden></span>
+        <h2 id="sv-name"></h2>
+        <p class="sticker-view-price">
+          <strong id="sv-unit"></strong> <span id="sv-unit-label">por unidad</span>
+        </p>
+        <p id="sv-pack" class="sticker-view-pack"></p>
+        <p id="sv-desc" class="sticker-view-desc" hidden></p>
+        <p class="sticker-view-spec">Vinil resistente al agua · Impresión HD</p>
+        <div id="sv-tags" class="sticker-view-tags"></div>
+        <div id="sv-actions" class="sticker-view-actions"></div>
+      </div>
+    </div>
+  </div>
+</div>

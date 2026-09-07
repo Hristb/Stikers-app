@@ -1,0 +1,32 @@
+---
+interface Props {
+  active: 'index' | 'drop';
+}
+const { active } = Astro.props;
+---
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Ir al inicio">
+    <div class="brand-mark">S</div>
+    <div class="brand-copy">
+      <strong>Sticker Vault</strong>
+      <span>MEMES,TECH &amp; GAMER&nbsp;</span>
+    </div>
+  </a>
+
+  <nav class="main-nav" aria-label="Navegación principal">
+    <a class={`nav-link${active === 'index' ? ' active' : ''}`} href="/">Home</a>
+    {/* "Drop" (Pack Sorpresa / Personalizado) oculto por ahora — la página
+        vive en src/pages/_drop.astro; renombrar a drop.astro para reactivar. */}
+  </nav>
+
+  <div class="top-actions">
+    <button class="cart-btn" aria-label="Carrito" onclick="openCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="19" r="1.5"></circle>
+        <circle cx="17" cy="19" r="1.5"></circle>
+        <path d="M3 4h2l2.2 9.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L19 7H6"></path>
+      </svg>
+      <span class="cart-count">0</span>
+    </button>
+  </div>
+</header>
