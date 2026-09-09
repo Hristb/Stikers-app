@@ -250,7 +250,7 @@ con contenido determinado.
 | `unit_price` | `numeric(10,2)` | `1` | Precio de sticker suelto (= `pricing.json.unitPrice`) |
 | `pack_size` | `int` | `10` (`> 0`) | Cuántos sueltos arman un pack |
 | `pack_price` | `numeric(10,2)` | `8.50` | Precio del pack |
-| `whatsapp_number` | `text` | `'51956547311'` | Número de negocio |
+| `whatsapp_number` | `text` | `'51905888108'` | Número de negocio |
 | `updated_at` | `timestamptz` | trigger | — |
 
 `create_order()` lee esta fila para calcular el total. El front la recibe

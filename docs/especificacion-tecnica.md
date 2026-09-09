@@ -88,7 +88,7 @@ Cada elemento:
   "order_number": "SV-000123",
   "total": 10.5,
   "currency": "PEN",
-  "whatsapp_number": "51956547311"
+  "whatsapp_number": "51905888108"
 }
 ```
 

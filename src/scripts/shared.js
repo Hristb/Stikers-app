@@ -7,7 +7,7 @@
    `window` al final de cada archivo. Un identificador libre (sin declarar
    en el módulo) SÍ resuelve contra `window`, así que los demás módulos
    pueden seguir llamando `openOv(...)`, `SPRITES`, etc. tal cual. */
-const WA = 'https://wa.me/51956547311?text=';
+const WA = 'https://wa.me/51905888108?text=';
 
 function openOv(id) {
   const el = document.getElementById(id);

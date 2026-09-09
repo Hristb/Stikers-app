@@ -116,7 +116,7 @@ create table public.store_config (
   unit_price       numeric(10,2) not null default 1,
   pack_size        int  not null default 10 check (pack_size > 0),
   pack_price       numeric(10,2) not null default 8.50,
-  whatsapp_number  text not null default '51956547311',
+  whatsapp_number  text not null default '51905888108',
   updated_at       timestamptz not null default now()
 );
 create trigger store_config_set_updated_at
@@ -145,5 +145,5 @@ insert into public.finishes (slug, label, image_url, sort_order) values
 on conflict (slug) do nothing;
 
 insert into public.store_config (id, currency, unit_price, pack_size, pack_price, whatsapp_number)
-values (1, 'PEN', 1, 10, 8.50, '51956547311')
+values (1, 'PEN', 1, 10, 8.50, '51905888108')
 on conflict (id) do nothing;
