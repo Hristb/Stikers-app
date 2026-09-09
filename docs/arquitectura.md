@@ -48,7 +48,7 @@ flowchart TB
     end
 
     Visitor(["Visitante<br/>(navegador)"])
-    WA(["WhatsApp<br/>wa.me/51956547311"])
+    WA(["WhatsApp<br/>wa.me/51905888108"])
 
     JSON --> SEED --> DB
     MIG -->|supabase db push| DB
@@ -166,7 +166,7 @@ sequenceDiagram
 | Cliente DB | `@supabase/supabase-js` v2 (build-time y browser) |
 | Infra | GitHub Pages + GitHub Actions; dominio propio `stikersvault.com` |
 | Analítica | Plausible (sin cookies) |
-| Pago | Manual por WhatsApp (`wa.me/51956547311`) |
+| Pago | Manual por WhatsApp (`wa.me/51905888108`) |
 
 ## 8. Estructura de carpetas relevante
 
