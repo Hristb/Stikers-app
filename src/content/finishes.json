@@ -2,16 +2,19 @@
   {
     "id": "blanco",
     "label": "Vinil Blanco",
-    "image": "/img/vinil/Vinil_adhesivo_blanco.jpg"
+    "image": "/img/vinil/Vinil_adhesivo_blanco.jpg",
+    "sortOrder": 0
   },
   {
     "id": "arcoiris",
     "label": "Holográfico Arcoíris",
-    "image": "/img/vinil/Vinil_adhesivo_holográfico_arcoiris.jpg"
+    "image": "/img/vinil/Vinil_adhesivo_holográfico_arcoiris.jpg",
+    "sortOrder": 1
   },
   {
     "id": "vidrio-roto",
     "label": "Holográfico Vidrio Roto",
-    "image": "/img/vinil/Vinil_adhesivo_holográfico_vidrio_roto.jpg"
+    "image": "/img/vinil/Vinil_adhesivo_holográfico_vidrio_roto.jpg",
+    "sortOrder": 2
   }
 ]

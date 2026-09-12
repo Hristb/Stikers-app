@@ -1,21 +1,43 @@
-/* ── Pack Personalizado (Customize Pack) ──
-   SPRITES (fortnite) viene de shared.js. FINISHES sale de #finishes-json
-   (colección `finishes`) en vez de un array hardcodeado en este archivo. */
+/* ── Pack Personalizado (arma tu pack con cualquier sticker del catálogo) ──
+   Antes solo dejaba elegir sprites de Fortnite (filtrado por rareza). Ahora
+   lee el catálogo completo (#catalog-json, misma fuente que usaba el
+   catálogo de stickers sueltos) y filtra por categoría en vez de rareza —
+   la rareza solo existe para Fortnite, las demás categorías no la tienen.
+
+   La hoja (vinil) es UNA sola para todo el pack, no por sticker — antes se
+   podía mezclar (cada sticker con su propia hoja), pero al meter recargo
+   por hoja holográfica esa mezcla complicaba el precio sin necesidad. */
+const SPRITES = readJSON('catalog-json', []);
+const CATEGORIES = readJSON('categories-json', []);
 const FINISHES = readJSON('finishes-json', []);
+const CUSTOM_PRICING = readJSON('pricing-json', { unitPrice: 1, packSize: 10, packPrice: 8.5 });
+
+// Único vinil sin recargo. Cualquier otro (hoy: holográfico arcoíris /
+// vidrio roto) suma este extra al pack completo.
+const HOLO_SURCHARGE = 0.5;
+const finishSurcharge = id => (id === 'blanco' ? 0 : HOLO_SURCHARGE);
+const currentPrice = () => CUSTOM_PRICING.packPrice + finishSurcharge(selectedFinish);
 
 let selectedIdxs   = [];
 let activeFilter   = 'all';
 let searchQuery    = '';
 let selectedFinish = FINISHES[0]?.id;
-let itemFinishes   = {}; // { [spriteIdx]: finishId } — lets each sticker use its own vinyl
 
 function openCustomize() {
-  selectedIdxs = []; activeFilter = 'all'; searchQuery = ''; selectedFinish = FINISHES[0]?.id; itemFinishes = {};
+  selectedIdxs = []; activeFilter = 'all'; searchQuery = ''; selectedFinish = FINISHES[0]?.id;
   const searchEl = document.getElementById('cust-search');
   if (searchEl) searchEl.value = '';
-  renderGrid(); updateCTA(); renderFinishes();
-  document.querySelectorAll('.filter-tab').forEach((t, i) => t.classList.toggle('active', i === 0));
+  renderFilterTabs(); renderGrid(); updateCTA(); renderFinishes();
   openOv('customize-overlay');
+}
+
+function renderFilterTabs() {
+  const box = document.getElementById('filter-tabs');
+  if (!box) return;
+  const tabs = [{ id: 'all', name: 'Todos' }, ...CATEGORIES];
+  box.innerHTML = tabs.map(c =>
+    `<button type="button" class="filter-tab${c.id === activeFilter ? ' active' : ''}" onclick="filterBy('${c.id}', this)">${c.name}</button>`
+  ).join('');
 }
 
 function renderFinishes() {
@@ -23,9 +45,10 @@ function renderFinishes() {
   if (!box) return;
   box.innerHTML = FINISHES.map(f => {
     const sel = f.id === selectedFinish;
-    return `<button type="button" class="finish-opt${sel ? ' selected' : ''}" onclick="selectFinish('${f.id}')" title="${f.label}" aria-pressed="${sel}">
+    const extra = finishSurcharge(f.id);
+    return `<button type="button" class="finish-opt${sel ? ' selected' : ''}" onclick="selectFinish('${f.id}')" title="${f.label}${extra ? ` (+S/ ${extra.toFixed(2)})` : ''}" aria-pressed="${sel}">
       <span class="finish-swatch" style="background-image:url('${f.image}')"></span>
-      <span class="finish-name">${f.label}</span>
+      <span class="finish-name">${f.label}${extra ? ` +${extra.toFixed(2)}` : ''}</span>
     </button>`;
   }).join('');
 }
@@ -33,10 +56,11 @@ function renderFinishes() {
 function selectFinish(id) {
   selectedFinish = id;
   renderFinishes();
+  updateCTA();
 }
 
 function renderGrid() {
-  let list = activeFilter === 'all' ? SPRITES : SPRITES.filter(s => s.rarity === activeFilter);
+  let list = activeFilter === 'all' ? SPRITES : SPRITES.filter(s => s.category === activeFilter);
   if (searchQuery) list = list.filter(s => s.name.toLowerCase().includes(searchQuery));
 
   if (list.length === 0) {
@@ -59,28 +83,20 @@ function renderGrid() {
       <img src="${s.image}" alt="${s.name}" loading="lazy"
            onerror="this.onerror=null;this.style.opacity='.25'">
       <span class="spr-name">${s.name}</span>
-      <span class="spr-rar bdg-${s.rarity}">${s.rarityLabel}</span>
+      ${s.rarityLabel ? `<span class="spr-rar${s.rarity ? ` bdg-${s.rarity}` : ''}">${s.rarityLabel}</span>` : ''}
     </div>`;
   }).join('');
 }
 
 function toggleSpr(gi) {
   const pos = selectedIdxs.indexOf(gi);
-  if (pos > -1) { selectedIdxs.splice(pos, 1); delete itemFinishes[gi]; }
-  else if (selectedIdxs.length < 10) { selectedIdxs.push(gi); itemFinishes[gi] = selectedFinish; }
+  if (pos > -1) selectedIdxs.splice(pos, 1);
+  else if (selectedIdxs.length < 10) selectedIdxs.push(gi);
   renderGrid(); updateCTA();
 }
 
-/* cycles a single selected sticker through the available vinyl finishes */
-function cycleItemFinish(gi) {
-  const order = FINISHES.map(f => f.id);
-  const current = itemFinishes[gi] || selectedFinish;
-  itemFinishes[gi] = order[(order.indexOf(current) + 1) % order.length];
-  updateCTA();
-}
-
-function filterBy(rarity, btn) {
-  activeFilter = rarity;
+function filterBy(category, btn) {
+  activeFilter = category;
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   renderGrid();
@@ -97,24 +113,22 @@ function updateCTA() {
   const numEl = document.getElementById('cust-num');
   const btn   = document.getElementById('cust-btn');
   const counter = document.querySelector('.cust-counter');
+  const priceEl = document.getElementById('cust-total-price');
   const progress = (n / 10) * 100;
 
   numEl.textContent = n;
   numEl.classList.toggle('zero', n === 0);
   numEl.classList.toggle('done', n === 10);
   if (counter) counter.style.setProperty('--progress', `${progress}%`);
+  if (priceEl) priceEl.textContent = `Total: S/ ${currentPrice().toFixed(2)}`;
 
-  /* live preview strip — each thumbnail shows/cycles its own vinyl finish */
+  /* live preview strip — tocar un sticker elegido lo saca del pack */
   const preview = document.getElementById('pack-preview');
-  preview.innerHTML = selectedIdxs.map(i => {
-    const finish = FINISHES.find(f => f.id === (itemFinishes[i] || selectedFinish)) || FINISHES[0];
-    return `<button type="button" class="pack-preview-item" onclick="cycleItemFinish(${i})"
-            title="${SPRITES[i].name} — ${finish.label} (toca para cambiar la hoja)">
+  preview.innerHTML = selectedIdxs.map(i => `
+    <button type="button" class="pack-preview-item" onclick="toggleSpr(${i})" title="Sacar ${SPRITES[i].name}">
       <img src="${SPRITES[i].image}" alt="${SPRITES[i].name}"
            onerror="this.onerror=null;this.style.opacity='.25'">
-      <span class="pack-preview-finish" style="background-image:url('${finish.image}')"></span>
-    </button>`;
-  }).join('');
+    </button>`).join('');
   preview.classList.toggle('visible', n > 0);
 
   if (n === 10) {
@@ -128,22 +142,21 @@ function updateCTA() {
 
 function confirmCustom() {
   if (selectedIdxs.length !== 10) return;
+  const finish = FINISHES.find(f => f.id === selectedFinish) || FINISHES[0];
+  const price = currentPrice();
   const buildMessage = () => {
     const lines = selectedIdxs.map(i => {
-      const finish = FINISHES.find(f => f.id === (itemFinishes[i] || selectedFinish)) || FINISHES[0];
-      return `  - ${SPRITES[i].name} (${SPRITES[i].rarityLabel}) — Hoja: ${finish.label}`;
+      const rarity = SPRITES[i].rarityLabel ? ` (${SPRITES[i].rarityLabel})` : '';
+      return `  - ${SPRITES[i].name}${rarity}`;
     }).join('\n');
-    return `Hola! Quiero pedir el Pack Personalizado - S/ 8.50\n\nMis stickers:\n${lines}`;
+    return `Hola! Quiero pedir el Pack Personalizado - S/ ${price.toFixed(2)}\nHoja: ${finish.label}\n\nMis stickers:\n${lines}`;
   };
   Checkout.recordOrderAndOpenWhatsApp({
     items: [{
       kind: 'pack_personalizado',
       quantity: 1,
       finish_slug: selectedFinish,
-      components: selectedIdxs.map(i => ({
-        slug: SPRITES[i].id,
-        finish_slug: itemFinishes[i] || selectedFinish,
-      })),
+      components: selectedIdxs.map(i => ({ slug: SPRITES[i].id })),
     }],
     buildMessage,
     closeOverlayId: 'customize-overlay',
@@ -153,7 +166,6 @@ function confirmCustom() {
 window.openCustomize = openCustomize;
 window.selectFinish = selectFinish;
 window.toggleSpr = toggleSpr;
-window.cycleItemFinish = cycleItemFinish;
 window.filterBy = filterBy;
 window.searchSprites = searchSprites;
 window.confirmCustom = confirmCustom;

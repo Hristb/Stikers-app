@@ -112,13 +112,17 @@ export const packsLoader = supabaseOrJson('src/content/packs.json', async (clien
     .eq('is_active', true)
     .order('sort_order');
   if (error) throw error;
-  return (data ?? []).map((r: any) => ({
+  // Astro no garantiza el orden de `getCollection()` (internamente lo
+  // reordena por id) — se expone `sortOrder` explícito para que quien
+  // consuma la colección ordene él mismo en vez de confiar en eso.
+  return (data ?? []).map((r: any, i: number) => ({
     id: r.slug,
     label: r.badge_label,
     name: r.name,
     description: r.description,
     image: r.image_url,
     price: num(r.price),
+    sortOrder: i,
   }));
 });
 
@@ -129,7 +133,7 @@ export const finishesLoader = supabaseOrJson('src/content/finishes.json', async 
     .eq('is_active', true)
     .order('sort_order');
   if (error) throw error;
-  return (data ?? []).map((r: any) => ({ id: r.slug, label: r.label, image: r.image_url }));
+  return (data ?? []).map((r: any, i: number) => ({ id: r.slug, label: r.label, image: r.image_url, sortOrder: i }));
 });
 
 export const pricingLoader = supabaseOrJson('src/content/pricing.json', async (client) => {

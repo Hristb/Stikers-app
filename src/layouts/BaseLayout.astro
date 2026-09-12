@@ -7,6 +7,7 @@ import CartOverlay from '../components/CartOverlay.astro';
 import CheckoutOverlay from '../components/CheckoutOverlay.astro';
 import StickerOverlay from '../components/StickerOverlay.astro';
 import PackDetailOverlay from '../components/PackDetailOverlay.astro';
+import CustomizeOverlay from '../components/CustomizeOverlay.astro';
 import Toast from '../components/Toast.astro';
 
 interface Props {
@@ -73,6 +74,7 @@ const pricingData = pricing[0]?.data ?? { unitPrice: 1, packSize: 10, packPrice:
     <CheckoutOverlay />
     <StickerOverlay />
     <PackDetailOverlay />
+    <CustomizeOverlay />
     <Toast />
 
     <script type="application/json" id="pricing-json" set:html={JSON.stringify(pricingData)} />
