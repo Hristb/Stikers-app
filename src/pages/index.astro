@@ -1,17 +1,43 @@
 ---
+import { readdir } from 'node:fs/promises';
+import path from 'node:path';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const products = await getCollection('products');
-const catalog = products.map(p => ({ id: p.id, ...p.data }));
-
+// Catálogo de stickers individuales desactivado por ahora: la gente entraba,
+// no encontraba/elegía algo puntual y se iba sin comprar. Se vende solo
+// packs armados de 10 stickers, directo. Para reactivar el catálogo: volver
+// a traer `products`, restaurar la sección "catalogo" + los tabs, y el
+// script #catalog-json (ver historial de este archivo).
 const packs = await getCollection('packs');
+
+// Carrusel del detalle de pack: si `public/img/packs/<id>/items/` tiene
+// fotos de los stickers sueltos, se arma un carrusel con esas; si no, cae
+// al único cover del pack (mismo comportamiento que antes, sin flechas).
+const IMG_RE = /\.(png|webp|jpe?g)$/i;
+const packItems = Object.fromEntries(
+  await Promise.all(packs.map(async (pack) => {
+    const dir = path.join(process.cwd(), 'public', 'img', 'packs', pack.id, 'items');
+    let files = [];
+    try {
+      files = (await readdir(dir)).filter(f => IMG_RE.test(f)).sort((a, b) => a.localeCompare(b, 'es'));
+    } catch {
+      files = [];
+    }
+    const images = files.map(f => ({
+      src: `/img/packs/${pack.id}/items/${f}`,
+      alt: path.parse(f).name.replace(/[-_]+/g, ' '),
+    }));
+    if (images.length === 0) images.push({ src: pack.data.image, alt: pack.data.name });
+    return [pack.id, images];
+  })),
+);
 ---
 <BaseLayout
-  title="Sticker Vault | Catálogo"
-  description="Sticker Vault — stickers de memes, tech y gaming. Vinil resistente al agua, impresión HD. Pide por WhatsApp."
-  ogTitle="Sticker Vault | Stickers de memes, tech y gaming"
-  ogDescription="Vinil resistente al agua, impresión HD. Arma tu pack de 10 y pide por WhatsApp."
+  title="Sticker Vault | Packs"
+  description="Sticker Vault — packs de 10 stickers de memes, tech y gaming. Vinil resistente al agua, impresión HD. Pide por WhatsApp."
+  ogTitle="Sticker Vault | Packs de stickers memes, tech y gaming"
+  ogDescription="Packs de 10 stickers listos para tu setup. Vinil resistente al agua, impresión HD. Pide por WhatsApp."
   path="/"
   active="index"
   bodyClass="home-page"
@@ -19,43 +45,18 @@ const packs = await getCollection('packs');
   <section class="catalog-hero">
     <div>
       <p class="eyebrow">Colección Sticker Vault</p>
-      <h1>Encuentra tu próximo sticker.</h1>
-      <p class="hero-copy">Explora stickers individuales y packs listos para llevar a tu setup.</p>
-    </div>
-    <div class="catalog-tabs" role="tablist" aria-label="Secciones del catálogo">
-      <button class="catalog-tab active" type="button" role="tab" aria-selected="true" aria-controls="catalogo" onclick="showHomeSection('catalogo', this)">Catálogo</button>
-      <button class="catalog-tab" type="button" role="tab" aria-selected="false" aria-controls="packs" onclick="showHomeSection('packs', this)">Packs</button>
+      <h1>Packs listos para tu setup.</h1>
+      <p class="hero-copy">10 stickers en vinil resistente al agua por pack, impresión HD. Elige el tuyo y pide por WhatsApp.</p>
     </div>
   </section>
 
-  <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+  <section id="packs" class="packs-section" aria-labelledby="packs-title">
     <div class="section-heading">
       <div>
-        <p class="section-kicker">01 / Individuales</p>
-        <h2 id="catalog-title">Catálogo</h2>
+        <p class="section-kicker">Packs de 10</p>
+        <h2 id="packs-title">Elige tu pack</h2>
       </div>
-      <span class="section-note">Elige tus favoritos</span>
-    </div>
-
-    <div class="home-search">
-      <input id="home-search" class="home-search-input" type="search"
-             placeholder="Busca: gato, python, batería, chill…" autocomplete="off"
-             oninput="searchHomeCatalog(this.value)">
-    </div>
-
-    <div class="sticker-catalog" id="sticker-catalog"></div>
-    <div class="load-more-row">
-      <button id="load-more-btn" class="load-more-btn" onclick="loadMoreHome()" hidden>Ver 10 más</button>
-    </div>
-  </section>
-
-  <section id="packs" class="packs-section" aria-labelledby="packs-title" hidden>
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">02 / Colecciones</p>
-        <h2 id="packs-title">Packs</h2>
-      </div>
-      <span class="section-note">Listos para descubrir</span>
+      <span class="section-note">Listos para llevar</span>
     </div>
     <div class="pack-catalog">
       {packs.map(pack => (
@@ -69,7 +70,7 @@ const packs = await getCollection('packs');
           tabindex="0"
           aria-label={`Ver ${pack.data.name}`}
         >
-          <img src={pack.data.image} alt={`Pack ${pack.data.name}`} />
+          <img src={pack.data.image} alt={pack.data.name} />
           <div>
             <span class="pack-label">{pack.data.label}</span>
             <h3>{pack.data.name}</h3>
@@ -88,8 +89,9 @@ const packs = await getCollection('packs');
   </section>
 
   <Fragment slot="scripts">
-    <script type="application/json" id="catalog-json" set:html={JSON.stringify(catalog)} />
     <script type="application/json" id="packs-json" set:html={JSON.stringify(packs.map(p => ({ id: p.id, ...p.data })))} />
+    <script type="application/json" id="pack-items-json" set:html={JSON.stringify(packItems)} />
     <script src="../scripts/catalog.js"></script>
+    <script src="../scripts/pack-detail.js"></script>
   </Fragment>
 </BaseLayout>

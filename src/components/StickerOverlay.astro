@@ -7,8 +7,11 @@
   <div class="overlay-panel sticker-panel">
     <button class="ov-close" onclick="closeOv('sticker-overlay')" aria-label="Cerrar">✕</button>
     <div class="sticker-view">
-      <div class="sticker-view-media">
-        <img id="sv-img" src="" alt="" onerror="this.onerror=null;this.style.opacity='.25'" />
+      <div id="sv-media" class="sticker-view-media">
+        <div id="sv-track" class="sv-track"></div>
+        <button id="sv-prev" class="sv-arrow sv-arrow-prev" type="button" aria-label="Anterior" hidden>‹</button>
+        <button id="sv-next" class="sv-arrow sv-arrow-next" type="button" aria-label="Siguiente" hidden>›</button>
+        <div id="sv-dots" class="sv-dots"></div>
       </div>
       <div class="sticker-view-info">
         <span id="sv-badge" class="sticker-view-badge" hidden></span>

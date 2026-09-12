@@ -63,7 +63,7 @@ document.querySelectorAll('.overlay:not(#sticker-overlay)').forEach(el => {
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
-    ['mystery-overlay', 'customize-overlay', 'cart-overlay', 'sticker-overlay'].forEach(id => {
+    ['mystery-overlay', 'customize-overlay', 'cart-overlay', 'sticker-overlay', 'pack-overlay'].forEach(id => {
       const el = document.getElementById(id);
       if (el && el.classList.contains('open')) closeOv(id);
     });
