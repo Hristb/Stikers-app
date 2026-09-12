@@ -1223,7 +1223,7 @@ h1 {
 .spr-card.maxed { opacity:.35; pointer-events:none; }
 .spr-card img { width:76%; flex:1; object-fit:contain; min-height:0; }
 .spr-name { font-size:clamp(.56rem,1.2vw,.72rem); font-weight:700; text-align:center; color:#1d2332; margin-top:4px; line-height:1.1; }
-.spr-rar { font-size:.48rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:2px 6px; border-radius:999px; margin-top:3px; }
+.spr-rar { font-size:.48rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:2px 6px; border-radius:999px; margin-top:3px; color: #6b7280; }
 .spr-chk {
   position:absolute; top:7px; right:7px; width:18px; height:18px;
   background:linear-gradient(135deg, #4dc7ff, #5f7cff); border-radius:50%; display:grid; place-items:center;
@@ -1276,7 +1276,7 @@ h1 {
   margin: 0;
 }
 .cust-footer .primary-btn:disabled {
-  background: rgba(17,17,19,.07); color: var(--muted);
+  background: #E4E4E7; color: #8A8F98;
   box-shadow:none; animation:none; cursor:not-allowed; pointer-events:none; transform:none;
 }
 
@@ -1499,44 +1499,40 @@ button { font-family: "Avenir Next", "Century Gothic", Montserrat, sans-serif; }
 .product-detail { color: #A0A0B0; }
 .product-detail .price-line { color: #E0E0E6; }
 .overlay { background: rgba(10,10,14,.86); }
-.overlay-panel,
-.cust-panel { background: #282830; color: #E0E0E6; border: 1px solid rgba(224,224,230,.12); }
+.overlay-panel { background: #282830; color: #E0E0E6; border: 1px solid rgba(224,224,230,.12); }
 .ov-close { background: rgba(224,224,230,.08); color: #E0E0E6; border-color: rgba(224,224,230,.14); }
 .ov-close:hover { background: rgba(112,224,0,.16); color: #70E000; }
-.mystery-hdr p,
-.cust-hdr h2,
-.cust-den,
-.cust-num.zero { color: #A0A0B0; }
-.cust-hdr,
-.filter-tabs,
-.cust-footer { background: rgba(40,40,48,.96); border-color: rgba(224,224,230,.1); }
-.cust-counter { background: conic-gradient(#70E000 0 var(--progress), #41414C var(--progress) 100%); }
-.cust-counter::before { background: #282830; box-shadow: inset 0 0 0 1px rgba(224,224,230,.12); }
-.cust-num { color: #E0E0E6; }
-.cust-num.done { color: #70E000; }
-.cust-total-price { color: #E0E0E6; }
-.cust-search-input {
-  background-color: #30303A;
-  color: #E0E0E6;
-  border-color: rgba(224,224,230,.14);
-  box-shadow: none;
-}
-.cust-search-input:focus { border-color: #70E000; box-shadow: 0 0 0 4px rgba(112,224,0,.14); }
-.cust-search-input::placeholder { color: #858592; }
-.filter-tab { background: #30303A; color: #A0A0B0; border-color: rgba(224,224,230,.12); }
-.filter-tab.active { background: #70E000; color: #12140F; border-color: #70E000; box-shadow: none; }
-.finish-row-label { color: #A0A0B0; }
-.finish-swatch { border-color: rgba(224,224,230,.16); box-shadow: 0 2px 8px rgba(0,0,0,.28); }
-.finish-opt.selected .finish-swatch { border-color: #70E000; box-shadow: 0 0 0 3px rgba(112,224,0,.24); }
-.finish-name { color: #A0A0B0; }
-.finish-opt.selected .finish-name { color: #70E000; }
-.spr-card { background: #30303A; border-color: rgba(224,224,230,.12); box-shadow: 0 8px 18px rgba(0,0,0,.2); }
-.spr-card.selected { border-color: #70E000; background: rgba(112,224,0,.08); box-shadow: 0 0 0 3px rgba(112,224,0,.16); }
-.spr-name { color: #E0E0E6; }
-.spr-chk { background: #70E000; box-shadow: 0 6px 12px rgba(112,224,0,.24); }
-.pack-preview-item img { background: #30303A; border-color: rgba(112,224,0,.32); }
+.mystery-hdr p { color: #A0A0B0; }
+
+/* "Arma tu pack" se queda con la misma paleta clara + acento verde que el
+   modal de detalle de pack (#pack-overlay), aunque el resto del sitio sea
+   oscuro — así no se siente como otra sección al pasar de ver un pack
+   armado a personalizar uno. Solo colores; layout y estructura intactos. */
+#customize-overlay .cust-panel { background: rgba(244, 245, 247, .98); color: #1f2a37; border: 1px solid rgba(17,17,19,.06); }
+.cust-panel .ov-close { background: #F4F4F2; color: #1f2a37; border-color: rgba(17,17,19,.08); }
+.cust-panel .ov-close:hover { background: var(--lime); color: #12140F; }
+.cust-hdr h2 { color: #111827; }
+.cust-den { color: #5c6473; }
+.cust-num { color: #1f2a37; }
+.cust-num.zero { color: #5e6475; }
+.cust-num.done { color: var(--lime-deep); }
+.cust-counter { background: conic-gradient(#70E000 0 var(--progress), #dfe8f0 var(--progress) 100%); }
+.cust-counter::before { background: rgba(247, 249, 252, .98); box-shadow: inset 0 0 0 1px rgba(106,121,153,.12); }
+.cust-total-price { color: #1f2a37; }
+.cust-search-input:focus { border-color: var(--lime); box-shadow: 0 0 0 4px rgba(112,224,0,.14); }
+.filter-tab.active { background: var(--lime); color: #12140F; border-color: var(--lime); box-shadow: none; }
+.finish-opt.selected .finish-swatch { border-color: var(--lime); box-shadow: 0 0 0 3px rgba(112,224,0,.24); }
+.finish-opt.selected .finish-name { color: var(--lime-deep); font-weight: 800; }
+#customize-overlay .no-results { color: #6b7280; }
+/* La card del sticker se queda blanca aunque el resto del sitio sea
+   oscuro (a diferencia de antes): un fondo oscuro detrás hacía que los
+   logos oscuros o blancos se perdieran, y ponerle blanco solo a la imagen
+   se veía como una imagen chica con marco oscuro alrededor. */
+.spr-card.selected { border-color: var(--lime); background: linear-gradient(180deg, rgba(112,224,0,.14), rgba(255,255,255,.98)); box-shadow: 0 0 0 3px rgba(112,224,0,.16); }
+.spr-chk { background: var(--lime); box-shadow: 0 6px 12px rgba(112,224,0,.24); }
+.pack-preview-item img { border-color: rgba(112,224,0,.32); }
 .pack-preview-finish { border-color: #282830; }
-.cust-footer .primary-btn:disabled { background: rgba(224,224,230,.08); color: #777783; }
+.cust-footer .primary-btn:disabled { background: #E4E4E7; color: #8A8F98; }
 .cust-footer .primary-btn { border-radius: 6px; }
 .toast { background: #70E000; color: #12140F; }
 
@@ -1764,6 +1760,26 @@ body:not(.home-page) .cta-row { margin-top: 14px; }
 .pd-name { margin: 10px 0 0; font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -.03em; color: #12140F; }
 .pd-price { margin: 6px 0 0; font-size: 1.5rem; font-weight: 800; color: #12140F; }
 
+.pd-finish-row { margin-top: 14px; }
+.pd-finish-label {
+  display: block; font-size: .64rem; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; color: #8a8a94; margin-bottom: 6px;
+}
+.pd-finish-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+.pd-finish-opt {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  border: 0; background: transparent; cursor: pointer; width: 66px; padding: 2px 0;
+}
+.pd-finish-swatch {
+  width: 40px; height: 40px; border-radius: 50%; background-size: cover; background-position: center;
+  border: 2px solid rgba(0, 0, 0, .12); box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.pd-finish-opt:hover .pd-finish-swatch { transform: translateY(-2px); }
+.pd-finish-opt.active .pd-finish-swatch { border-color: var(--lime); box-shadow: 0 0 0 3px rgba(112, 224, 0, .22); }
+.pd-finish-name { font-size: .6rem; font-weight: 700; text-align: center; color: #4a5365; line-height: 1.15; }
+.pd-finish-opt.active .pd-finish-name { color: #12140F; font-weight: 800; }
+
 .pd-specs { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .pd-specs li { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; background: #F7F7F5; border-radius: 12px; }
 .pd-specs li span { font-size: .64rem; color: #8a8a94; text-transform: uppercase; letter-spacing: .05em; }
@@ -1797,5 +1813,16 @@ body:not(.home-page) .cta-row { margin-top: 14px; }
   }
   .pd-arrow { display: none; } /* swipe nativo en su lugar */
   .pd-specs { grid-template-columns: 1fr 1fr; }
-  .pd-actions { flex-direction: column; }
+  /* Barra de compra pegajosa: el modal tiene bastante contenido antes de
+     llegar a los botones (galería, specs, hoja, cantidad) — en vez de
+     obligar a scrollear hasta el fondo para comprar, se queda visible
+     mientras el resto scrollea debajo (mismo criterio que .cust-footer
+     en el carrito/builder). */
+  .pd-actions {
+    flex-direction: column;
+    position: sticky; bottom: 0; z-index: 3;
+    background: #fff;
+    margin: 20px -16px 0; padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 16px -6px rgba(0, 0, 0, .1);
+  }
 }
