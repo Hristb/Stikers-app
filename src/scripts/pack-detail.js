@@ -180,18 +180,25 @@ window.addEventListener('resize', () => {
 });
 
 // Cards de #packs en el home: toda la card abre el modal; el botón "+"
-// (agregar directo, sin abrir el modal) hace lo suyo aparte.
+// (agregar directo, sin abrir el modal) hace lo suyo aparte. La card
+// "Arma tu pack" no tiene data-id (no es un pack real) — abre el builder
+// (openCustomize, de customize-pack.js) en vez del detalle.
 const _packSection = document.getElementById('packs');
 if (_packSection) {
   _packSection.addEventListener('click', e => {
     if (e.target.closest('.pack-add')) return;
     const card = e.target.closest('.pack-product');
-    if (card) openPackDetail(card.dataset.id);
+    if (!card) return;
+    if (card.dataset.id) openPackDetail(card.dataset.id);
+    else if (card.classList.contains('pack-product-custom')) window.openCustomize?.();
   });
   _packSection.addEventListener('keydown', e => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     const card = e.target.closest('.pack-product');
-    if (card && !e.target.closest('.pack-add')) { e.preventDefault(); openPackDetail(card.dataset.id); }
+    if (!card || e.target.closest('.pack-add')) return;
+    e.preventDefault();
+    if (card.dataset.id) openPackDetail(card.dataset.id);
+    else if (card.classList.contains('pack-product-custom')) window.openCustomize?.();
   });
 }
 

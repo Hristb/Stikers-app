@@ -1,19 +1,12 @@
 [
   {
-    "id": "pack-fortnite",
-    "label": "Gaming",
-    "name": "Pack Fortnite",
-    "description": "10 sprites de Fortnite en vinil resistente al agua. Mítico, legendario, épico y más.",
-    "image": "/img/packs/pack-fortnite/cover.webp",
-    "price": 8.5
-  },
-  {
-    "id": "pack-developer",
-    "label": "Tech",
-    "name": "Pack Developer",
-    "description": "10 stickers de lenguajes, herramientas y logos dev para tu laptop.",
-    "image": "/img/packs/pack-developer/cover.webp",
-    "price": 8.5
+    "id": "pack-dino-amarillo",
+    "label": "Memes",
+    "name": "Pack Dino Amarillo",
+    "description": "10 stickers del dino amarillo en sus mejores poses para tu laptop o botella.",
+    "image": "/img/packs/pack-dino-amarillo/cover.png",
+    "price": 8.5,
+    "sortOrder": 0
   },
   {
     "id": "pack-gatos",
@@ -21,15 +14,8 @@
     "name": "Pack Gatos",
     "description": "10 gatos meme para tu setup. Selección de la casa.",
     "image": "/img/packs/pack-gatos/cover.webp",
-    "price": 8.5
-  },
-  {
-    "id": "pack-plantas-flores",
-    "label": "Deco",
-    "name": "Pack Plantas y Flores",
-    "description": "10 stickers de plantas y flores en vinil resistente al agua para darle vida a tu setup.",
-    "image": "/img/packs/pack-plantas-flores/cover.png",
-    "price": 8.5
+    "price": 8.5,
+    "sortOrder": 1
   },
   {
     "id": "pack-octogonos-advertencia",
@@ -37,15 +23,35 @@
     "name": "Pack Octógonos de Advertencia",
     "description": "10 señales de advertencia con mensajes random para reírte de tus propios excesos.",
     "image": "/img/packs/pack-octogonos-advertencia/cover.png",
-    "price": 8.5
+    "price": 8.5,
+    "sortOrder": 2
   },
   {
-    "id": "pack-dino-amarillo",
-    "label": "Memes",
-    "name": "Pack Dino Amarillo",
-    "description": "10 stickers del dino amarillo en sus mejores poses para tu laptop o botella.",
-    "image": "/img/packs/pack-dino-amarillo/cover.png",
-    "price": 8.5
+    "id": "pack-plantas-flores",
+    "label": "Deco",
+    "name": "Pack Plantas y Flores",
+    "description": "10 stickers de plantas y flores en vinil resistente al agua para darle vida a tu setup.",
+    "image": "/img/packs/pack-plantas-flores/cover.png",
+    "price": 8.5,
+    "sortOrder": 3
+  },
+  {
+    "id": "pack-fortnite",
+    "label": "Gaming",
+    "name": "Pack Fortnite",
+    "description": "10 sprites de Fortnite en vinil resistente al agua. Mítico, legendario, épico y más.",
+    "image": "/img/packs/pack-fortnite/cover.webp",
+    "price": 8.5,
+    "sortOrder": 4
+  },
+  {
+    "id": "pack-developer",
+    "label": "Tech",
+    "name": "Pack Developer",
+    "description": "10 stickers de lenguajes, herramientas y logos dev para tu laptop.",
+    "image": "/img/packs/pack-developer/cover.webp",
+    "price": 8.5,
+    "sortOrder": 5
   },
   {
     "id": "pack-fortnite-gold",
@@ -53,6 +59,7 @@
     "name": "Pack Fortnite Gold",
     "description": "10 sprites dorados exclusivos de Fortnite en vinil resistente al agua.",
     "image": "/img/packs/pack-fortnite-gold/cover.png",
-    "price": 8.5
+    "price": 8.5,
+    "sortOrder": 6
   }
 ]

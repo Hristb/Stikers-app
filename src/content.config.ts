@@ -46,6 +46,7 @@ const packs = defineCollection({
     description: z.string(),
     image: z.string(),
     price: z.number(),
+    sortOrder: z.number(),
   }),
 });
 
@@ -54,6 +55,7 @@ const finishes = defineCollection({
   schema: z.object({
     label: z.string(),
     image: z.string(),
+    sortOrder: z.number(),
   }),
 });
 

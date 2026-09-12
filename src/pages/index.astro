@@ -4,12 +4,21 @@ import path from 'node:path';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Catálogo de stickers individuales desactivado por ahora: la gente entraba,
-// no encontraba/elegía algo puntual y se iba sin comprar. Se vende solo
-// packs armados de 10 stickers, directo. Para reactivar el catálogo: volver
-// a traer `products`, restaurar la sección "catalogo" + los tabs, y el
-// script #catalog-json (ver historial de este archivo).
-const packs = await getCollection('packs');
+// El catálogo de stickers sueltos (navegar los 222 uno por uno) sigue
+// desactivado como sección propia — la gente entraba, no encontraba/elegía
+// algo puntual y se iba sin comprar. Pero el picker de "Arma tu pack" SÍ
+// necesita el catálogo completo (#catalog-json) para poder elegir de
+// cualquier categoría, así que se vuelve a traer acá.
+// getCollection() no garantiza el orden de carga (Astro reordena por id
+// internamente) — se ordena explícito por `sortOrder` (el orden real que
+// definimos en packs.json / Supabase, hoy: más pedidos primero).
+const packs = (await getCollection('packs')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const products = await getCollection('products');
+const catalog = products.map(p => ({ id: p.id, ...p.data }));
+const categories = (await getCollection('categories')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const finishes = (await getCollection('finishes')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const pricing = await getCollection('pricing');
+const pricingData = pricing[0]?.data ?? { unitPrice: 1, packSize: 10, packPrice: 8.5 };
 
 // Carrusel del detalle de pack: si `public/img/packs/<id>/items/` tiene
 // fotos de los stickers sueltos, se arma un carrusel con esas; si no, cae
@@ -56,9 +65,30 @@ const packItems = Object.fromEntries(
         <p class="section-kicker">Packs de 10</p>
         <h2 id="packs-title">Elige tu pack</h2>
       </div>
-      <span class="section-note">Listos para llevar</span>
+      <div class="section-heading-actions">
+        <span class="section-note">Listos para llevar</span>
+        <button type="button" class="custom-pack-btn" onclick="openCustomize()">Pack Personalizado</button>
+      </div>
     </div>
     <div class="pack-catalog">
+      <!-- Solo visible en mobile (ver .pack-product-custom en global.css) —
+           en desktop el mismo builder se abre desde el botón de arriba, así
+           no depende de scrollear toda la grilla para encontrarlo. -->
+      <article
+        class="pack-product pack-product-custom"
+        role="button"
+        tabindex="0"
+        aria-label="Arma tu propio pack"
+      >
+        <div class="pack-product-custom-icon">+</div>
+        <div>
+          <span class="pack-label">Personalizado</span>
+          <h3>Arma tu pack</h3>
+          <p>Elegí vos los 10 stickers, de cualquier categoría.</p>
+        </div>
+        <strong>S/ {pricingData.packPrice.toFixed(2)}</strong>
+      </article>
+
       {packs.map(pack => (
         <article
           class="pack-product"
@@ -91,7 +121,11 @@ const packItems = Object.fromEntries(
   <Fragment slot="scripts">
     <script type="application/json" id="packs-json" set:html={JSON.stringify(packs.map(p => ({ id: p.id, ...p.data })))} />
     <script type="application/json" id="pack-items-json" set:html={JSON.stringify(packItems)} />
+    <script type="application/json" id="catalog-json" set:html={JSON.stringify(catalog)} />
+    <script type="application/json" id="categories-json" set:html={JSON.stringify(categories.map(c => ({ id: c.id, ...c.data })))} />
+    <script type="application/json" id="finishes-json" set:html={JSON.stringify(finishes.map(f => ({ id: f.id, ...f.data })))} />
     <script src="../scripts/catalog.js"></script>
     <script src="../scripts/pack-detail.js"></script>
+    <script src="../scripts/customize-pack.js"></script>
   </Fragment>
 </BaseLayout>

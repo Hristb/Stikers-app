@@ -21,17 +21,13 @@
                oninput="searchSprites(this.value)">
       </div>
 
-      <div class="filter-tabs" role="group" aria-label="Filtrar por rareza">
-        <button class="filter-tab active" onclick="filterBy('all',this)">Todos</button>
-        <button class="filter-tab" onclick="filterBy('mythic',this)">Míticos</button>
-        <button class="filter-tab" onclick="filterBy('legendary',this)">Legendarios</button>
-        <button class="filter-tab" onclick="filterBy('epic',this)">Épicos</button>
-        <button class="filter-tab" onclick="filterBy('rare',this)">Raros</button>
-        <button class="filter-tab" onclick="filterBy('special',this)">Special</button>
-      </div>
+      <!-- Tabs armados por JS desde #categories-json (renderFilterTabs en
+           customize-pack.js) — antes eran rarezas fijas de Fortnite; ahora
+           el picker cubre todo el catálogo, así que filtran por categoría. -->
+      <div id="filter-tabs" class="filter-tabs" role="group" aria-label="Filtrar por categoría"></div>
 
-      <div class="finish-row" role="group" aria-label="Elige el material de tu hoja">
-        <span class="finish-row-label">Hoja por defecto</span>
+      <div class="finish-row" role="group" aria-label="Elige la hoja de tu pack">
+        <span class="finish-row-label">Hoja del pack</span>
         <div id="finish-tabs" class="finish-tabs"></div>
       </div>
     </div>
@@ -41,10 +37,13 @@
     </div>
 
     <div class="cust-footer">
-      <div id="pack-preview" class="pack-preview" aria-label="Stickers seleccionados. Toca uno para cambiar su hoja"></div>
-      <button class="primary-btn" id="cust-btn" onclick="confirmCustom()" disabled>
-        Confirmar
-      </button>
+      <div id="pack-preview" class="pack-preview" aria-label="Stickers seleccionados. Toca uno para sacarlo"></div>
+      <div class="cust-confirm-row">
+        <span id="cust-total-price" class="cust-total-price"></span>
+        <button class="primary-btn" id="cust-btn" onclick="confirmCustom()" disabled>
+          Confirmar
+        </button>
+      </div>
     </div>
   </div>
 </div>

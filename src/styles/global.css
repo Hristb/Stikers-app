@@ -199,6 +199,15 @@ body {
 .section-kicker { color: var(--lime); margin: 0 0 6px; }
 .section-heading h2 { margin: 0; font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -.06em; }
 .section-note { padding-bottom: 6px; }
+.section-heading-actions { display: flex; align-items: center; gap: 14px; }
+.custom-pack-btn {
+  appearance: none; cursor: pointer; white-space: nowrap;
+  border: 1px solid rgba(112, 224, 0, .35); border-radius: 999px;
+  background: rgba(112, 224, 0, .1); color: var(--lime);
+  font-size: .72rem; font-weight: 800; letter-spacing: .04em;
+  padding: 9px 16px; transition: background .15s, transform .15s;
+}
+.custom-pack-btn:hover { background: var(--lime); color: #12140F; transform: translateY(-1px); }
 .sticker-catalog {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -235,6 +244,23 @@ body {
   position: absolute; right: 12px; bottom: 12px; width: 30px; height: 30px;
   border: 0; border-radius: 50%; background: var(--lime); color: #12140F;
   font-size: 1.2rem; line-height: 1; cursor: pointer;
+}
+
+/* Card "Arma tu pack" — mismo grid que .pack-product, pero marcada como
+   distinta (borde punteado) porque no es un pack real: abre el builder
+   (openCustomize) en vez del modal de detalle. */
+/* En desktop el builder se abre desde .custom-pack-btn (header de la
+   sección) — esta card solo aparece en mobile, primera de la grilla, para
+   no depender de scrollear toda la lista de packs para encontrarla. */
+.pack-product-custom { display: none; border-style: dashed; border-color: rgba(112, 224, 0, .45); background: rgba(112, 224, 0, .05); }
+.pack-product-custom-icon {
+  width: 108px; height: 108px; border-radius: 16px;
+  display: grid; place-items: center;
+  background: rgba(112, 224, 0, .12); color: var(--lime);
+  font-size: 2.2rem; font-weight: 800;
+}
+@media (max-width: 540px) {
+  .pack-product-custom-icon { width: 90px; height: 90px; }
 }
 
 .shipping-badge {
@@ -654,6 +680,8 @@ h1 {
   .catalog-tabs { align-self: stretch; justify-content: center; }
   .sticker-catalog { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pack-catalog { grid-template-columns: 1fr; }
+  .pack-product-custom { display: grid; }
+  .custom-pack-btn { display: none; }
 }
 
 @media (max-width: 540px) {
@@ -1240,8 +1268,9 @@ h1 {
   grid-column: 1;
   margin: 0;
 }
+.cust-confirm-row { grid-column: 2; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.cust-total-price { font-size: .8rem; font-weight: 800; color: #1f2a37; }
 .cust-footer .primary-btn {
-  grid-column: 2;
   width: auto; min-width: 230px; font-size: .86rem; letter-spacing: 0.08em;
   padding: 14px 22px; border-radius: 16px; font-weight: 800;
   margin: 0;
@@ -1342,8 +1371,32 @@ h1 {
   .mystery-cards { gap:5px; }
   .sprites-grid { grid-template-columns:repeat(3,1fr); gap:6px; }
   .overlay-panel { padding:18px 14px 28px; border-radius:24px 24px 0 0; }
-  .cust-hdr h2 { font-size:1.3rem; }
-  .cust-num { font-size:1.7rem; }
+
+  /* El picker de "Arma tu pack" es alto (buscador + tabs + hojas + grilla
+     + preview): en vez de un panel chico flotando con mucho scroll interno,
+     ocupa la pantalla entera — mismo criterio que el modal de detalle de
+     pack — y se achica el header para que la grilla de stickers quede
+     visible más rápido, sin tanto scroll para llegar a ella. */
+  #customize-overlay { padding: 0; align-items: stretch; }
+  #customize-overlay .cust-panel {
+    width: 100%; max-width: none; height: 100dvh; max-height: 100dvh;
+    min-height: 0; border-radius: 0;
+    padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
+  }
+  .cust-hdr { gap: 6px; padding: 0 0 8px; }
+  .cust-hdr h2 { font-size: 1.1rem; line-height: 1.1; }
+  .cust-counter { width: 52px; height: 52px; box-shadow: inset 0 0 0 5px rgba(255,255,255,.35); }
+  .cust-counter::before { inset: 6px; }
+  .cust-num { font-size: 1.1rem; }
+  .cust-den { font-size: .56rem; }
+  .ov-close { width: 30px; height: 30px; font-size: .7rem; }
+  .cust-search-input { padding: 8px 14px 8px 36px; font-size: .84rem; }
+  .filter-tab { padding: 6px 11px; font-size: .6rem; min-height: 28px; }
+  .finish-row { padding: 4px 0 0; }
+  .finish-opt { width: 50px; }
+  .finish-swatch { width: 32px; height: 32px; }
+  .finish-name { font-size: .48rem; }
+
   .cust-footer {
     display: flex;
     justify-content: center;
@@ -1461,6 +1514,7 @@ button { font-family: "Avenir Next", "Century Gothic", Montserrat, sans-serif; }
 .cust-counter::before { background: #282830; box-shadow: inset 0 0 0 1px rgba(224,224,230,.12); }
 .cust-num { color: #E0E0E6; }
 .cust-num.done { color: #70E000; }
+.cust-total-price { color: #E0E0E6; }
 .cust-search-input {
   background-color: #30303A;
   color: #E0E0E6;
