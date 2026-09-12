@@ -8,12 +8,18 @@
 const PD_PACKS = readJSON('packs-json', []);
 const PD_ITEMS = readJSON('pack-items-json', {});
 const PD_PRICING = readJSON('pricing-json', { unitPrice: 1, packSize: 10, packPrice: 8.5 });
+const PD_FINISHES = readJSON('finishes-json', []);
 
 // Specs comunes a todos los packs (mismo producto físico, distinto diseño).
 // TODO: si el tamaño real difiere entre packs, mover esto a packs.json.
 const PD_SIZE = 'Aprox. 5 cm cada sticker';
-const PD_MATERIAL = 'Vinil blanco clásico';
 const PD_WATER = 'Sí, resistente al agua y rayones';
+
+// El pack se vende con vinil blanco por defecto; cambiar a un holográfico
+// solo afecta esa hoja y el precio (+0.50) — el diseño/los stickers del
+// pack no cambian. Mismo criterio de precio que "Arma tu pack".
+const HOLO_SURCHARGE = 0.5;
+const finishSurcharge = id => (!id || id === 'blanco' ? 0 : HOLO_SURCHARGE);
 
 const pdEsc = s => String(s).replace(/'/g, "\\'");
 
@@ -21,6 +27,42 @@ let pdPack = null;
 let pdSlides = [];  // [{ src, alt }] — índice 0 = portada del pack
 let pdIndex = 0;
 let pdQty = 1;
+let pdFinish = PD_FINISHES[0]?.id;
+
+function pdUnitPrice() {
+  return pdPack.price + finishSurcharge(pdFinish);
+}
+
+function pdRenderFinishes() {
+  const row = document.getElementById('pd-finish-row');
+  const box = document.getElementById('pd-finish-tabs');
+  if (!row || !box) return;
+  if (PD_FINISHES.length <= 1) { row.hidden = true; return; }
+  row.hidden = false;
+  box.innerHTML = PD_FINISHES.map(f => {
+    const sel = f.id === pdFinish;
+    const extra = finishSurcharge(f.id);
+    return `<button type="button" class="pd-finish-opt${sel ? ' active' : ''}" onclick="pdSelectFinish('${f.id}')" title="${f.label}${extra ? ` (+S/ ${extra.toFixed(2)})` : ''}" aria-pressed="${sel}">
+      <span class="pd-finish-swatch" style="background-image:url('${f.image}')"></span>
+      <span class="pd-finish-name">${f.label}${extra ? ` +${extra.toFixed(2)}` : ''}</span>
+    </button>`;
+  }).join('');
+}
+
+function pdSelectFinish(id) {
+  pdFinish = id;
+  pdRenderFinishes();
+  pdRenderPrice();
+}
+
+function pdRenderPrice() {
+  const priceEl = document.getElementById('pd-price');
+  const materialEl = document.getElementById('pd-spec-material');
+  if (!pdPack) return;
+  if (priceEl) priceEl.textContent = `S/ ${pdUnitPrice().toFixed(2)}`;
+  const finish = PD_FINISHES.find(f => f.id === pdFinish);
+  if (materialEl) materialEl.textContent = finish?.label || 'Vinil blanco';
+}
 
 /* pack-items-json siempre trae al menos 1 entrada por pack (si no hay
    fotos en items/, cae a la portada) — si esa única entrada ES la
@@ -98,18 +140,19 @@ function openPackDetail(id) {
   pdPack = pack;
   pdSlides = pdBuildSlides(pack);
   pdIndex = 0;
+  pdFinish = PD_FINISHES[0]?.id;
 
   pdRenderGallery(pdSlides);
   pdSyncUI();
   pdSetQty(1);
+  pdRenderFinishes();
 
   document.getElementById('pd-category').textContent = pack.label || 'Pack';
   document.getElementById('pd-name').textContent = pack.name;
-  document.getElementById('pd-price').textContent = `S/ ${pack.price.toFixed(2)}`;
   document.getElementById('pd-spec-count').textContent = `${PD_PRICING.packSize} unidades`;
   document.getElementById('pd-spec-size').textContent = PD_SIZE;
-  document.getElementById('pd-spec-material').textContent = PD_MATERIAL;
   document.getElementById('pd-spec-water').textContent = PD_WATER;
+  pdRenderPrice();
 
   openOv('pack-overlay');
 }
@@ -118,23 +161,40 @@ function closePackDetail() {
   closeOv('pack-overlay');
 }
 
+/* Nombre del ítem de carrito: si la hoja es la de base (blanco) queda
+   igual que siempre; si no, se le suma la hoja al nombre — así el carrito
+   trata "Pack Gatos" y "Pack Gatos — Holográfico Arcoíris" como líneas
+   distintas en vez de mezclar precios distintos bajo un mismo nombre. */
+function pdCartName() {
+  const isBase = !pdFinish || pdFinish === PD_FINISHES[0]?.id;
+  if (isBase) return pdPack.name;
+  const finish = PD_FINISHES.find(f => f.id === pdFinish);
+  return finish ? `${pdPack.name} — ${finish.label}` : pdPack.name;
+}
+
 function pdAddToCart() {
   if (!pdPack || !window.Cart) return;
+  const name = pdCartName();
+  const price = pdUnitPrice();
   for (let i = 0; i < pdQty; i++) {
-    window.Cart.add({ kind: 'pack', slug: pdPack.id, name: pdPack.name, img: pdPack.image });
+    window.Cart.add({ kind: 'pack', slug: pdPack.id, name, img: pdPack.image, price });
   }
-  showToast(pdQty > 1 ? `${pdQty}x ${pdPack.name} agregado al carrito` : `${pdPack.name} agregado al carrito`);
+  showToast(pdQty > 1 ? `${pdQty}x ${name} agregado al carrito` : `${name} agregado al carrito`);
   pdSetQty(1);
 }
 
 function pdBuyWhatsApp() {
   if (!pdPack) return;
   const qty = pdQty;
-  const total = (qty * pdPack.price).toFixed(2);
+  const unit = pdUnitPrice();
+  const total = (qty * unit).toFixed(2);
+  const finish = PD_FINISHES.find(f => f.id === pdFinish);
   window.Checkout.recordOrderAndOpenWhatsApp({
-    items: [{ kind: 'pack', slug: pdPack.id, quantity: qty }],
+    items: [{ kind: 'pack', slug: pdPack.id, quantity: qty, finish_slug: pdFinish }],
     buildMessage: () =>
-      `Hola! Quiero comprar:\n\n${qty}x ${pdPack.name} (pack de ${PD_PRICING.packSize}) — S/ ${total}\n\nTotal: S/ ${total}`,
+      `Hola! Quiero comprar:\n\n${qty}x ${pdPack.name} (pack de ${PD_PRICING.packSize})` +
+      (finish ? ` — Hoja: ${finish.label}` : '') +
+      ` — S/ ${unit.toFixed(2)} c/u\n\nTotal: S/ ${total}`,
     closeOverlayId: 'pack-overlay',
   });
 }
@@ -204,3 +264,4 @@ if (_packSection) {
 
 window.openPackDetail = openPackDetail;
 window.closePackDetail = closePackDetail;
+window.pdSelectFinish = pdSelectFinish;

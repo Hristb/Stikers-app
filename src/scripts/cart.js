@@ -52,6 +52,9 @@ const Cart = {
       name: product.name,
       rarity: product.rarity || '',
       img: product.img || '',
+      // Precio propio del ítem (ej. pack + hoja holográfica) — si no viene,
+      // cae al precio fijo de pack/sticker de siempre.
+      price: product.price ?? (product.kind === 'pack' ? PACK_PRICE : UNIT_PRICE),
       qty: 1,
     });
     this.save();
@@ -90,13 +93,15 @@ const Cart = {
     return this.stickerUnits() + this.packUnits();
   },
 
-  /* bundles every full group of 10 loose stickers at pack price, rest per unit,
-     plus each armed pack at pack price */
+  /* bundles every full group of 10 loose stickers at pack price, rest per
+     unit, plus cada pack armado a SU precio (puede variar por la hoja
+     elegida — ver `price` en cada ítem) */
   getTotal() {
     const s = this.stickerUnits();
     const packs = Math.floor(s / PACK_SIZE);
     const loose = s % PACK_SIZE;
-    return +(packs * PACK_PRICE + loose * UNIT_PRICE + this.packUnits() * PACK_PRICE).toFixed(2);
+    const packsTotal = this.items.reduce((sum, i) => sum + (i.kind === 'pack' ? i.qty * (i.price ?? PACK_PRICE) : 0), 0);
+    return +(packs * PACK_PRICE + loose * UNIT_PRICE + packsTotal).toFixed(2);
   },
 
   getPackBreakdown() {
@@ -130,7 +135,7 @@ const PAYMENT_CHANNELS = {
         .join('\n');
       const packLines = cart.items
         .filter(i => i.kind === 'pack')
-        .map(i => `  - ${i.qty}x ${i.name} (pack de ${PACK_SIZE}) — S/ ${(i.qty * PACK_PRICE).toFixed(2)}`)
+        .map(i => `  - ${i.qty}x ${i.name} (pack de ${PACK_SIZE}) — S/ ${(i.qty * (i.price ?? PACK_PRICE)).toFixed(2)}`)
         .join('\n');
       const { packs, loose } = cart.getPackBreakdown();
       const packLine = packs > 0 ? `${packs} pack(s) de ${PACK_SIZE} a S/ ${PACK_PRICE.toFixed(2)} c/u` : null;
@@ -198,7 +203,7 @@ function renderCart() {
     if (checkoutBtn) checkoutBtn.disabled = false;
     list.innerHTML = Cart.items.map(i => {
       const isPack = i.kind === 'pack';
-      const linePrice = isPack ? i.qty * PACK_PRICE : i.qty * UNIT_PRICE;
+      const linePrice = isPack ? i.qty * (i.price ?? PACK_PRICE) : i.qty * UNIT_PRICE;
       const sub = isPack ? `Pack de ${PACK_SIZE}` : i.rarity;
       return `
       <div class="cart-line${isPack ? ' cart-line-pack' : ''}">
