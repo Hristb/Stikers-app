@@ -777,13 +777,44 @@ h1 {
   .sticker-view { grid-template-columns: 210px 1fr; align-items: start; }
 }
 .sticker-view-media {
-  display: grid; place-items: center; aspect-ratio: 1; padding: 18px;
-  background: var(--surface-raised); border: 1px solid var(--line); border-radius: 20px;
+  position: relative; aspect-ratio: 1;
+  /* Fondo blanco fijo (no theme-aware): los stickers están recortados para
+     verse sobre blanco: en dark mode se pierden contra el gris del tema. */
+  background: #fff; border: 1px solid rgba(0, 0, 0, .08); border-radius: 20px;
+  overflow: hidden;
 }
-.sticker-view-media img {
+.sv-track {
+  display: flex; width: 100%; height: 100%; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+}
+.sv-track::-webkit-scrollbar { display: none; }
+.sv-slide {
+  flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always;
+  display: grid; place-items: center; padding: 18px;
+}
+.sv-slide img {
   width: 100%; height: 100%; max-width: 260px; object-fit: contain;
   filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .42));
 }
+.sv-arrow {
+  position: absolute; top: 50%; translate: 0 -50%; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line);
+  background: rgba(20, 20, 26, .55); backdrop-filter: blur(4px);
+  color: #fff; font-size: 1.2rem; line-height: 1; cursor: pointer;
+  display: grid; place-items: center; transition: background .15s, transform .15s;
+}
+.sv-arrow:hover { background: var(--lime); color: #12140F; }
+.sv-arrow-prev { left: 10px; }
+.sv-arrow-next { right: 10px; }
+.sv-dots {
+  position: absolute; left: 0; right: 0; bottom: 10px; z-index: 2;
+  display: flex; justify-content: center; gap: 6px;
+}
+.sv-dot {
+  width: 6px; height: 6px; border-radius: 999px; border: 0; padding: 0;
+  background: rgba(255, 255, 255, .45); cursor: pointer; transition: width .2s, background .2s;
+}
+.sv-dot.active { width: 16px; background: var(--lime); }
 .sticker-view-info { display: flex; flex-direction: column; gap: 7px; padding-right: 8px; }
 .sticker-view-badge {
   align-self: flex-start; font-size: .58rem; font-weight: 800; letter-spacing: .08em;
@@ -804,8 +835,9 @@ h1 {
   transition: color .15s, border-color .15s;
 }
 .sticker-view-tag:hover { color: var(--lime); border-color: rgba(112, 224, 0, .4); }
-.sticker-view-actions { margin-top: 20px; }
-.sticker-view-actions .primary-btn { width: 100%; }
+.sticker-view-actions { margin-top: 20px; display: flex; gap: 10px; align-items: stretch; }
+.sticker-view-actions .primary-btn { width: auto; flex: 1; }
+.sticker-view-actions .cart-btn { flex: none; }
 
 /* Entrada: nace desde abajo. En desktop queda centrada; el panel sube. */
 #sticker-overlay { transition: opacity .4s ease, visibility .4s ease; }
@@ -819,6 +851,7 @@ h1 {
 /* Móvil: bottom-sheet real — sube desde el borde inferior, ancho completo. */
 @media (max-width: 560px) {
   .sticker-view-info { padding-right: 0; }
+  .sv-arrow { display: none; }
   #sticker-overlay { align-items: flex-end; padding: 0; }
   #sticker-overlay .overlay-panel {
     width: 100%; max-width: none; max-height: 92vh;
@@ -1591,4 +1624,124 @@ body:not(.home-page) .cta-row { margin-top: 14px; }
   .site-footer-brand { max-width: none; }
   .site-footer-nav { flex-flow: row wrap; gap: 8px 18px; }
   .site-footer-legal { padding: 0 18px 22px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Modal "Detalle del pack" (#pack-overlay / .pd-*)
+   Fondo claro fijo a propósito (pedido explícito): el resto del sitio
+   es oscuro, pero acá se prioriza que los stickers se vean bien y que
+   el modal lea como una ficha de producto, no como el resto del sitio.
+   Hereda tamaño/animación/scrollbar de .overlay-panel; solo se pisan
+   colores + se agrega el layout de 2 columnas y sus piezas.
+   ══════════════════════════════════════════════════════════════════ */
+.pd-panel { background: #fff; color: #1b1b22; }
+.pd-panel > .ov-close {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  background: #F4F4F2; border-color: rgba(0, 0, 0, .08); color: #1b1b22;
+}
+.pd-panel > .ov-close:hover { background: var(--lime); }
+
+.pd-layout { display: grid; grid-template-columns: 1fr; gap: 22px; padding-top: 6px; }
+@media (min-width: 760px) {
+  .pd-layout { grid-template-columns: 1.1fr 1fr; align-items: start; }
+}
+/* Los items de grid tienen min-width:auto por default: como la galería
+   trae contenido "ancho" adentro (el track scrolleable, con las imágenes),
+   sin esto la columna se estira a ese ancho en vez de recortarse a la
+   grilla — eso era lo que reventaba la imagen/el layout. */
+.pd-gallery, .pd-info { min-width: 0; }
+
+/* — Galería: imagen grande + carrusel de miniaturas — */
+.pd-media {
+  position: relative; width: 100%; aspect-ratio: 1;
+  background: #fff; border: 1px solid rgba(0, 0, 0, .08); border-radius: 18px;
+  overflow: hidden;
+}
+.pd-track {
+  display: flex; width: 100%; height: 100%; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+}
+.pd-track::-webkit-scrollbar { display: none; }
+.pd-slide {
+  flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always;
+  display: grid; place-items: center; padding: 20px;
+}
+.pd-slide img {
+  width: 100%; height: 100%; max-width: 320px; object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .18));
+}
+.pd-arrow {
+  position: absolute; top: 50%; translate: 0 -50%; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .08);
+  background: rgba(255, 255, 255, .92); color: #1b1b22; font-size: 1.25rem; line-height: 1;
+  display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 16px rgba(0, 0, 0, .14);
+  transition: background .15s;
+}
+.pd-arrow:hover { background: var(--lime); }
+.pd-arrow-prev { left: 10px; }
+.pd-arrow-next { right: 10px; }
+
+.pd-thumbs {
+  display: flex; gap: 8px; margin-top: 12px; padding-bottom: 4px;
+  overflow-x: auto; scrollbar-width: thin;
+}
+.pd-thumb {
+  flex: 0 0 auto; width: 56px; height: 56px; padding: 3px;
+  border: 2px solid rgba(0, 0, 0, .08); border-radius: 12px; background: #F7F7F5;
+  display: grid; place-items: center; cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.pd-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.pd-thumb.active { border-color: var(--lime); background: rgba(112, 224, 0, .14); }
+
+.pd-caption {
+  margin: 10px 0 0; display: flex; justify-content: space-between; gap: 10px;
+  font-size: .76rem; color: #6b6b76;
+}
+.pd-caption #pd-current-name { font-weight: 700; color: #1b1b22; }
+
+/* — Info: nombre, precio, specs, cantidad, CTAs — */
+.pd-category {
+  display: inline-block; font-size: .62rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--lime-deep);
+  background: rgba(112, 224, 0, .12); border: 1px solid rgba(112, 224, 0, .3);
+  border-radius: 999px; padding: 3px 10px;
+}
+.pd-name { margin: 10px 0 0; font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -.03em; color: #12140F; }
+.pd-price { margin: 6px 0 0; font-size: 1.5rem; font-weight: 800; color: #12140F; }
+
+.pd-specs { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pd-specs li { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; background: #F7F7F5; border-radius: 12px; }
+.pd-specs li span { font-size: .64rem; color: #8a8a94; text-transform: uppercase; letter-spacing: .05em; }
+.pd-specs li strong { font-size: .86rem; color: #1b1b22; }
+
+.pd-qty { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; }
+.pd-qty > span { font-size: .82rem; font-weight: 700; color: #1b1b22; }
+.pd-stepper { display: flex; align-items: center; border: 1px solid rgba(0, 0, 0, .14); border-radius: 999px; overflow: hidden; }
+.pd-stepper button { width: 34px; height: 34px; border: 0; background: #F7F7F5; color: #1b1b22; font-size: 1.1rem; cursor: pointer; }
+.pd-stepper button:hover { background: var(--lime); }
+.pd-stepper span { min-width: 32px; text-align: center; font-weight: 800; font-size: .9rem; color: #1b1b22; }
+
+.pd-actions { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.pd-btn {
+  appearance: none; border: 0; border-radius: 12px; padding: 14px 18px;
+  font-weight: 800; letter-spacing: .02em; cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+.pd-btn:hover { transform: translateY(-1px); }
+.pd-btn-primary { background: linear-gradient(135deg, var(--lime), var(--lime-deep)); color: #12140F; box-shadow: 0 14px 26px rgba(112, 224, 0, .28); }
+.pd-btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 14px 26px rgba(37, 211, 102, .28); }
+
+/* Mobile: el modal ocupa el dispositivo entero (sin margen oscuro
+   alrededor) para aprovechar la pantalla chica — nada de "tarjeta
+   flotante" acá, es la pantalla completa con scroll interno. */
+@media (max-width: 560px) {
+  #pack-overlay { padding: 0; align-items: stretch; }
+  #pack-overlay .pd-panel {
+    width: 100%; max-width: none; height: 100dvh; max-height: 100dvh;
+    border-radius: 0; padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  }
+  .pd-arrow { display: none; } /* swipe nativo en su lugar */
+  .pd-specs { grid-template-columns: 1fr 1fr; }
+  .pd-actions { flex-direction: column; }
 }

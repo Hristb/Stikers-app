@@ -1,0 +1,54 @@
+---
+// Modal de detalle de pack: imagen grande + carrusel de miniaturas (pack +
+// los stickers que trae adentro), specs, selector de cantidad y doble CTA
+// (carrito / WhatsApp directo). Lo llena y controla pack-detail.js
+// (openPackDetail). Fondo claro fijo a propósito — el resto del sitio es
+// oscuro, pero este modal se pidió así para que los stickers se vean bien.
+---
+<div id="pack-overlay" class="overlay" role="dialog" aria-modal="true" aria-label="Detalle del pack">
+  <div class="overlay-panel pd-panel">
+    <button class="ov-close" onclick="closePackDetail()" aria-label="Cerrar">✕</button>
+
+    <div class="pd-layout">
+      <div class="pd-gallery">
+        <div class="pd-media">
+          <div id="pd-track" class="pd-track"></div>
+          <button id="pd-prev" class="pd-arrow pd-arrow-prev" type="button" aria-label="Anterior" hidden>‹</button>
+          <button id="pd-next" class="pd-arrow pd-arrow-next" type="button" aria-label="Siguiente" hidden>›</button>
+        </div>
+        <div id="pd-thumbs" class="pd-thumbs"></div>
+        <p class="pd-caption">
+          <span id="pd-counter"></span>
+          <span id="pd-current-name"></span>
+        </p>
+      </div>
+
+      <div class="pd-info">
+        <span id="pd-category" class="pd-category"></span>
+        <h2 id="pd-name" class="pd-name"></h2>
+        <p id="pd-price" class="pd-price"></p>
+
+        <ul class="pd-specs">
+          <li><span>Stickers</span><strong id="pd-spec-count"></strong></li>
+          <li><span>Tamaño</span><strong id="pd-spec-size"></strong></li>
+          <li><span>Material</span><strong id="pd-spec-material"></strong></li>
+          <li><span>Resistencia</span><strong id="pd-spec-water"></strong></li>
+        </ul>
+
+        <div class="pd-qty">
+          <span>Cantidad</span>
+          <div class="pd-stepper">
+            <button type="button" id="pd-qty-minus" aria-label="Restar cantidad">−</button>
+            <span id="pd-qty-val">1</span>
+            <button type="button" id="pd-qty-plus" aria-label="Sumar cantidad">+</button>
+          </div>
+        </div>
+
+        <div class="pd-actions">
+          <button type="button" id="pd-add-btn" class="pd-btn pd-btn-primary">Agregar pack al carrito</button>
+          <button type="button" id="pd-wa-btn" class="pd-btn pd-btn-whatsapp">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

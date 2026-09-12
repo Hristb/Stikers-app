@@ -4,8 +4,10 @@
    como #catalog-json a partir de la colección `products` — mismo shape
    que tendría una respuesta de API real. */
 const CATALOG = readJSON('catalog-json', []);
-const PACKS = readJSON('packs-json', []);
 const CATALOG_PRICING = readJSON('pricing-json', { unitPrice: 1, packSize: 10, packPrice: 8.5 });
+// Los packs (cards de #packs, su modal de detalle y su carrito) viven en
+// pack-detail.js — este archivo solo se ocupa del catálogo de stickers
+// sueltos (hoy desactivado, ver comentario en index.astro).
 
 function showHomeSection(sectionId, tab) {
   const sections = ['catalogo', 'packs'];
@@ -133,60 +135,82 @@ if (_catalogGrid) {
   });
 }
 
-// Igual para las cards de packs (sección #packs).
-const _packSection = document.getElementById('packs');
-if (_packSection) {
-  _packSection.addEventListener('click', e => {
-    if (e.target.closest('.pack-add')) return;
-    const card = e.target.closest('.pack-product');
-    if (card) openPack(card.dataset.id);
-  });
-  _packSection.addEventListener('keydown', e => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const card = e.target.closest('.pack-product');
-    if (card && !e.target.closest('.pack-add')) { e.preventDefault(); openPack(card.dataset.id); }
-  });
-}
-
 const escSv = s => String(s).replace(/'/g, "\\'");
 
-function openPack(id) {
-  const pk = PACKS.find(x => x.id === id);
-  if (!pk) return;
-  svCurrent = { id: pk.id, name: pk.name, image: pk.image, isPack: true };
+/* ── Carrusel del overlay de detalle (#sv-media) ──
+   Scroll nativo con scroll-snap: el swipe en móvil es gratis (es scroll de
+   verdad), flechas/dots solo hacen `scrollTo` al slide correspondiente.
+   Un slide único (sticker suelto, o pack sin fotos en items/) oculta los
+   controles y queda igual que la vista de antes. */
+let svImages = [];
+let svIndex = 0;
 
-  const img = document.getElementById('sv-img');
-  img.src = pk.image; img.alt = pk.name; img.style.opacity = '';
-  document.getElementById('sv-name').textContent = pk.name;
-
-  const badge = document.getElementById('sv-badge');
-  badge.textContent = pk.label || 'Pack';
-  badge.className = 'sticker-view-badge sticker-view-badge--plain';
-  badge.hidden = false;
-
-  document.getElementById('sv-unit').textContent = `S/ ${CATALOG_PRICING.packPrice.toFixed(2)}`;
-  document.getElementById('sv-unit-label').textContent = `· ${CATALOG_PRICING.packSize} stickers`;
-  document.getElementById('sv-pack').hidden = true;
-
-  const desc = document.getElementById('sv-desc');
-  desc.textContent = pk.description || '';
-  desc.hidden = !pk.description;
-
-  document.getElementById('sv-tags').innerHTML = '';
-
-  renderStickerActions();
-  openOv('sticker-overlay');
+function svGoTo(i, smooth = true) {
+  const track = document.getElementById('sv-track');
+  if (!track || !svImages.length) return;
+  svIndex = (i + svImages.length) % svImages.length;
+  track.scrollTo({ left: svIndex * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+  document.querySelectorAll('#sv-dots .sv-dot').forEach((d, di) => d.classList.toggle('active', di === svIndex));
 }
+
+function renderCarousel(images) {
+  const track = document.getElementById('sv-track');
+  const dots = document.getElementById('sv-dots');
+  const prev = document.getElementById('sv-prev');
+  const next = document.getElementById('sv-next');
+  if (!track) return;
+
+  svImages = images && images.length ? images : [];
+  svIndex = 0;
+
+  track.innerHTML = svImages.map((im, i) => `
+    <div class="sv-slide"><img src="${im.src}" alt="${escSv(im.alt || '')}" loading="${i === 0 ? 'eager' : 'lazy'}" onerror="this.onerror=null;this.style.opacity='.25'"></div>
+  `).join('');
+
+  const multi = svImages.length > 1;
+  if (prev) prev.hidden = !multi;
+  if (next) next.hidden = !multi;
+  if (dots) {
+    dots.innerHTML = multi
+      ? svImages.map((_, i) => `<button type="button" class="sv-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Ir a imagen ${i + 1}"></button>`).join('')
+      : '';
+  }
+  track.scrollLeft = 0;
+}
+
+// Delegado una sola vez: sobrevive a los re-renders de innerHTML de arriba.
+document.getElementById('sv-prev')?.addEventListener('click', () => svGoTo(svIndex - 1));
+document.getElementById('sv-next')?.addEventListener('click', () => svGoTo(svIndex + 1));
+document.getElementById('sv-dots')?.addEventListener('click', e => {
+  const dot = e.target.closest('.sv-dot');
+  if (dot) svGoTo(Number(dot.dataset.i));
+});
+
+// El usuario también puede arrastrar/swipear el track directo (scroll
+// nativo) — este listener solo mantiene el dot activo sincronizado.
+let _svScrollTimer;
+document.getElementById('sv-track')?.addEventListener('scroll', function () {
+  clearTimeout(_svScrollTimer);
+  _svScrollTimer = setTimeout(() => {
+    if (!svImages.length) return;
+    const i = Math.round(this.scrollLeft / this.clientWidth);
+    svIndex = Math.max(0, Math.min(i, svImages.length - 1));
+    document.querySelectorAll('#sv-dots .sv-dot').forEach((d, di) => d.classList.toggle('active', di === svIndex));
+  }, 100);
+});
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('sticker-overlay')?.classList.contains('open')) return;
+  if (e.key === 'ArrowLeft') svGoTo(svIndex - 1);
+  if (e.key === 'ArrowRight') svGoTo(svIndex + 1);
+});
 
 function openSticker(id) {
   const s = CATALOG.find(x => x.id === id);
   if (!s) return; // p. ej. en /drop no hay #catalog-json
   svCurrent = s;
 
-  const img = document.getElementById('sv-img');
-  img.src = s.image;
-  img.alt = s.name;
-  img.style.opacity = '';
+  renderCarousel([{ src: s.image, alt: s.name }]);
   document.getElementById('sv-name').textContent = s.name;
 
   const badge = document.getElementById('sv-badge');
@@ -218,16 +242,31 @@ function renderStickerActions() {
   const box = document.getElementById('sv-actions');
   if (!box || !svCurrent) return;
   const inCart = (window.Cart?.items || []).find(i => i.name === svCurrent.name);
-  // Un solo botón. El texto refleja el estado; el conteo lo da el toast + el
-  // badge del carrito en el header. Sin stepper ni "ver carrito" acá.
-  box.innerHTML =
-    `<button type="button" class="primary-btn" onclick="svAdd()">${inCart ? 'Agregar otro' : 'Agregar al carrito'}</button>`;
+  const count = window.Cart?.getCount ? window.Cart.getCount() : 0;
+  // Botón de agregar + acceso directo al carrito: en mobile el modal tapa
+  // el header, así que sin esto no había forma de llegar al carrito sin
+  // cerrar todo y scrollear arriba.
+  box.innerHTML = `
+    <button type="button" class="primary-btn" onclick="svAdd()">${inCart ? 'Agregar otro' : 'Agregar carrito'}</button>
+    <button type="button" class="cart-btn" onclick="svGoToCart()" aria-label="Ver carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="19" r="1.5"></circle>
+        <circle cx="17" cy="19" r="1.5"></circle>
+        <path d="M3 4h2l2.2 9.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L19 7H6"></path>
+      </svg>
+      <span class="cart-count">${count}</span>
+    </button>`;
+}
+
+function svGoToCart() {
+  closeOv('sticker-overlay');
+  openCart();
 }
 
 function svAdd() {
   if (!svCurrent || !window.Cart) return;
   window.Cart.add({
-    kind: svCurrent.isPack ? 'pack' : 'sticker',
+    kind: 'sticker',
     slug: svCurrent.id,
     name: svCurrent.name,
     rarity: svCurrent.rarityLabel,
@@ -253,6 +292,7 @@ window.addEventListener('resize', () => {
   _resizeTimer = setTimeout(() => {
     homeVisibleCount = pageSize();
     renderHomeCatalog();
+    if (svImages.length > 1) svGoTo(svIndex, false);
   }, 200);
 });
 
@@ -260,6 +300,6 @@ window.showHomeSection = showHomeSection;
 window.loadMoreHome = loadMoreHome;
 window.searchHomeCatalog = searchHomeCatalog;
 window.openSticker = openSticker;
-window.openPack = openPack;
 window.svAdd = svAdd;
+window.svGoToCart = svGoToCart;
 window.svSearchTag = svSearchTag;
